@@ -315,6 +315,13 @@
       font-weight: 800;
     }
 
+    .social-proof .btn {
+      margin-top: 0.9rem;
+      min-height: 2.65rem;
+      padding: 0.7rem 1rem;
+      font-size: 0.84rem;
+    }
+
     .stars {
       color: #b77800;
       letter-spacing: 0;
@@ -375,6 +382,122 @@
 
     .benefit {
       padding: 1.35rem;
+    }
+
+    .cta-strip {
+      display: grid;
+      place-items: center;
+      gap: 0.75rem;
+      width: min(740px, 100%);
+      margin: 2rem auto 0;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 16px 42px rgba(53, 18, 31, 0.07);
+    }
+
+    .cta-strip p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pricing {
+      background:
+        linear-gradient(180deg, rgba(255, 240, 244, 0.82), rgba(255, 250, 247, 0.95)),
+        var(--shell);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      align-items: center;
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .price-card {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      gap: 0.72rem;
+      padding: 1.45rem;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--white);
+      box-shadow: 0 16px 42px rgba(53, 18, 31, 0.08);
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--berry);
+      box-shadow: 0 24px 64px rgba(168, 20, 66, 0.18);
+    }
+
+    .popular-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2rem;
+      padding: 0.4rem 0.78rem;
+      border-radius: 999px;
+      background: var(--berry);
+      color: var(--white);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .pack-title {
+      color: var(--wine);
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .price-old {
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-decoration: line-through;
+    }
+
+    .price-real {
+      color: var(--wine);
+      font-size: clamp(2.15rem, 9vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .saving {
+      color: #16803a;
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .unit-price,
+    .pack-note,
+    .secure-line {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .pack-note {
+      max-width: 15rem;
+      font-weight: 700;
+    }
+
+    .secure-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2rem;
+      margin-top: 0.2rem;
+      padding: 0.35rem 0.72rem;
+      border-radius: 999px;
+      background: var(--shell);
+      color: var(--berry);
+      font-weight: 800;
     }
 
     .benefit-icon {
@@ -641,6 +764,10 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
+      .pricing-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .gallery-item:nth-child(2) {
         margin-top: 2.5rem;
       }
@@ -672,6 +799,10 @@
 
       .benefits {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .price-card.featured {
+        transform: scale(1.06);
       }
 
       .steps::before {
@@ -748,7 +879,7 @@
             <strong>$15.990</strong>
           </div>
           <div class="hero-actions">
-            <a class="btn" href="#comprar">Comprar ahora</a>
+            <a class="btn" href="#comprar">Elegir mi pack</a>
             <a class="btn btn-light" href="#faq">Ver preguntas</a>
           </div>
           <div class="badges" aria-label="Beneficios de compra">
@@ -775,6 +906,9 @@
 
     <section class="social-proof" aria-label="Prueba social">
       <span class="stars">★★★★★</span> +2.400 clientes satisfechos · Envíos a todo Chile
+      <div>
+        <a class="btn btn-light" href="#comprar">Ver packs con descuento</a>
+      </div>
     </section>
 
     <section class="section" aria-labelledby="lifestyle-title">
@@ -827,6 +961,53 @@
             <p>Pago seguro, garantía de 30 días y atención rápida si necesitas ayuda.</p>
           </article>
         </div>
+        <div class="cta-strip reveal">
+          <p>Elige el pack que más te acomode y recibe Urocare.cl con despacho discreto.</p>
+          <a class="btn" href="#comprar">Elegir mi pack ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="comprar" aria-labelledby="precios-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Ofertas por pack</p>
+          <h2 id="precios-title">Elige tu pack Urocare.cl</h2>
+          <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro, despacho discreto y garantía de 30 días.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <div class="pack-title">PACK 1x</div>
+            <div class="price-old">$15.990</div>
+            <div class="price-real">$15.990</div>
+            <div class="saving">Ideal para probar</div>
+            <div class="unit-price">Precio por unidad $15.990</div>
+            <a class="btn" href="https://wa.me/">Agregar al carrito</a>
+            <div class="secure-line">Compra 100% segura</div>
+          </article>
+
+          <article class="price-card featured reveal">
+            <div class="popular-badge">MÁS POPULAR</div>
+            <div class="pack-title">PACK 3x</div>
+            <div class="price-old">$47.970</div>
+            <div class="price-real">$35.990</div>
+            <div class="saving">Ahorra $11.980</div>
+            <div class="unit-price">Precio por unidad $11.997</div>
+            <div class="pack-note">La opción más elegida por nuestras clientas</div>
+            <a class="btn" href="https://wa.me/">Agregar al carrito</a>
+            <div class="secure-line">Compra 100% segura</div>
+          </article>
+
+          <article class="price-card reveal">
+            <div class="pack-title">PACK 2x</div>
+            <div class="price-old">$31.980</div>
+            <div class="price-real">$26.990</div>
+            <div class="saving">Ahorra $4.990</div>
+            <div class="unit-price">Precio por unidad $13.495</div>
+            <a class="btn" href="https://wa.me/">Agregar al carrito</a>
+            <div class="secure-line">Compra 100% segura</div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -873,6 +1054,10 @@
             <img src="lifestyle.png" alt="Mujer adulta sosteniendo el probiótico íntimo femenino en ambiente cálido">
           </figure>
         </div>
+        <div class="cta-strip reveal">
+          <p>Si ya estás lista para comprar, el pack 3x tiene el mejor precio por unidad.</p>
+          <a class="btn" href="#comprar">Ver pack más popular</a>
+        </div>
       </div>
     </section>
 
@@ -901,6 +1086,10 @@
             <p>"La atención fue rápida y el empaque venía muy cuidado. Se siente como un producto premium, no algo incómodo de comprar."</p>
             <div class="person">Francisca Silva<span class="city">La Serena</span></div>
           </article>
+        </div>
+        <div class="cta-strip reveal">
+          <p>Compra hoy y recibe tu pedido con empaque discreto y seguimiento.</p>
+          <a class="btn" href="#comprar">Agregar al carrito</a>
         </div>
       </div>
     </section>
@@ -952,7 +1141,7 @@
       </div>
     </section>
 
-    <section class="section final-cta" id="comprar" aria-labelledby="cta-title">
+    <section class="section final-cta" id="cta-final" aria-labelledby="cta-title">
       <div class="wrap reveal">
         <h2 id="cta-title">Stock limitado para despacho inmediato</h2>
         <p>Compra hoy Urocare.cl y recibe un producto de bienestar íntimo con presentación premium, pago seguro y garantía de 30 días.</p>
@@ -960,7 +1149,7 @@
           <span class="stock">Solo quedan 14 unidades disponibles</span>
           <span class="timer" id="timer">Oferta termina en 03:00:00</span>
         </div>
-        <a class="btn btn-light" href="https://wa.me/">Comprar ahora · $15.990</a>
+        <a class="btn btn-light" href="#comprar">Elegir pack ahora</a>
       </div>
     </section>
   </main>
