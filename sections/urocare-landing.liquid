@@ -29,6 +29,7 @@
       background: var(--cream);
       letter-spacing: 0;
       text-align: center;
+      padding-bottom: 4.8rem;
     }
 
     img {
@@ -68,6 +69,30 @@
       border-bottom: 1px solid var(--line);
       background: rgba(255, 250, 247, 0.86);
       backdrop-filter: blur(18px);
+    }
+
+    .cyber-strip {
+      display: grid;
+      place-items: center;
+      gap: 0.35rem;
+      padding: 0.72rem 1rem;
+      background: linear-gradient(90deg, var(--berry), var(--rose), var(--berry));
+      color: var(--white);
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      box-shadow: 0 12px 32px rgba(168, 20, 66, 0.22);
+    }
+
+    .cyber-strip small {
+      display: block;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: none;
     }
 
     .logo {
@@ -252,12 +277,77 @@
       line-height: 1;
     }
 
+    .price-row del {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.8rem;
       align-items: center;
+    }
+
+    .cyber-countdown {
+      display: grid;
+      justify-items: center;
+      gap: 0.8rem;
+      width: min(520px, 100%);
+      margin: 0 auto 1.15rem;
+      padding: 1rem;
+      border: 1px solid rgba(168, 20, 66, 0.18);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 16px 42px rgba(168, 20, 66, 0.1);
+    }
+
+    .cyber-countdown strong {
+      color: var(--berry);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.55rem;
+      width: 100%;
+    }
+
+    .time-box {
+      display: grid;
+      place-items: center;
+      gap: 0.18rem;
+      min-height: 4rem;
+      border-radius: 18px;
+      background: var(--wine);
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .time-box span {
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .time-box small {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .fomo-line {
+      width: min(620px, 100%);
+      margin: 1rem auto 0;
+      color: var(--berry);
+      font-size: 0.9rem;
+      font-weight: 900;
+      line-height: 1.45;
     }
 
     .hero-card {
@@ -303,6 +393,21 @@
       font-size: 0.9rem;
       font-weight: 800;
       box-shadow: 0 12px 28px rgba(168, 20, 66, 0.08);
+    }
+
+    .sale-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2rem;
+      padding: 0.38rem 0.76rem;
+      border-radius: 999px;
+      background: rgba(22, 128, 58, 0.12);
+      color: #126b31;
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .icon {
@@ -530,6 +635,10 @@
       letter-spacing: 0.08em;
     }
 
+    .cyber-badge {
+      background: linear-gradient(90deg, var(--wine), var(--berry));
+    }
+
     .pack-title {
       color: var(--wine);
       font-size: 1.2rem;
@@ -579,6 +688,13 @@
       background: var(--shell);
       color: var(--berry);
       font-weight: 800;
+    }
+
+    .stock-note {
+      color: var(--berry);
+      font-size: 0.78rem;
+      font-weight: 900;
+      line-height: 1.35;
     }
 
     .benefit-icon {
@@ -774,6 +890,50 @@
       font-weight: 800;
     }
 
+    .mobile-cyber-cta {
+      position: fixed;
+      left: 0.75rem;
+      right: 0.75rem;
+      bottom: 0.75rem;
+      z-index: 60;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.78rem 0.82rem;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 22px;
+      background: rgba(53, 18, 31, 0.94);
+      color: var(--white);
+      box-shadow: 0 18px 48px rgba(53, 18, 31, 0.35);
+      backdrop-filter: blur(16px);
+      text-align: center;
+    }
+
+    .mobile-cyber-cta strong,
+    .mobile-cyber-cta small {
+      display: block;
+      line-height: 1.25;
+    }
+
+    .mobile-cyber-cta strong {
+      font-size: 0.84rem;
+      font-weight: 900;
+    }
+
+    .mobile-cyber-cta small {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    .mobile-cyber-cta .btn {
+      min-height: 2.65rem;
+      padding: 0.68rem 0.85rem;
+      font-size: 0.78rem;
+      box-shadow: none;
+    }
+
     .footer {
       padding: 2.2rem clamp(1rem, 4vw, 4.5rem);
       background: var(--wine);
@@ -835,6 +995,14 @@
     }
 
     @media (min-width: 640px) {
+      body {
+        padding-bottom: 0;
+      }
+
+      .mobile-cyber-cta {
+        display: none;
+      }
+
       .badges,
       .benefits,
       .steps,
@@ -884,6 +1052,10 @@
       }
 
       .benefits {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .badges {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
@@ -954,31 +1126,47 @@
     }
 </style>
 
-<div class="topbar">Envío gratis sobre $29.990 · Garantía 30 días · Pago 100% seguro</div>
+<div class="topbar">CYBERDAY activo · Descuentos por tiempo limitado · Envío gratis sobre $29.990</div>
 
   <nav class="nav" aria-label="Navegación principal">
     <a class="logo" href="#inicio" aria-label="MYUROCARE.COM">
       <img class="brand-avatar" src="{{ 'instagram-profile.png' | asset_url }}" alt="Logo MYUROCARE.COM">
       <span class="brand-copy">MYUROCARE.COM<small>Bienestar íntimo</small></span>
     </a>
-    <a class="btn" href="#comprar">Comprar ahora</a>
+    <a class="btn" href="#comprar">Comprar oferta Cyber</a>
   </nav>
+
+  <div class="cyber-strip">
+    Últimas unidades Cyberday con descuento
+    <small>PACK 3x más popular: quedan 14 disponibles en esta promo</small>
+  </div>
 
   <main id="inicio">
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Rutina diaria premium</p>
-          <h1 id="hero-title">Tu rutina íntima, más simple</h1>
-          <p class="lead">Un probiótico femenino en cápsulas para acompañar tu autocuidado diario con una experiencia discreta, moderna y fácil de mantener.</p>
+          <p class="eyebrow">Cyberday bienestar íntimo</p>
+          <h1 id="hero-title">CYBERDAY MYUROCARE</h1>
+          <p class="lead">Packs con descuento por tiempo limitado para acompañar tu rutina diaria de bienestar íntimo con compra discreta, despacho reservado y pago seguro.</p>
+          <div class="cyber-countdown" aria-label="Contador Cyberday">
+            <strong>La oferta termina pronto</strong>
+            <div class="countdown-grid">
+              <div class="time-box"><span data-countdown-hours>03</span><small>horas</small></div>
+              <div class="time-box"><span data-countdown-minutes>00</span><small>min</small></div>
+              <div class="time-box"><span data-countdown-seconds>00</span><small>seg</small></div>
+            </div>
+          </div>
           <div class="price-row">
-            <span>Precio lanzamiento</span>
+            <span>Cyber desde</span>
+            <del>$21.990</del>
             <strong>$15.990</strong>
           </div>
           <div class="hero-actions">
-            <a class="btn" href="#comprar">Elegir mi pack</a>
-            <a class="btn btn-light" href="#faq">Ver preguntas</a>
+            <a class="btn" href="#comprar">Comprar con descuento</a>
+            <a class="btn btn-light" href="#comprar">Ver packs Cyber</a>
+            <a class="btn btn-light" href="#producto">Ver producto</a>
           </div>
+          <p class="fomo-line">Más de 37 personas revisaron esta oferta hoy. El pack 3x es el más elegido y tiene stock limitado.</p>
           <div class="badges" aria-label="Beneficios de compra">
             <div class="badge">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
@@ -992,6 +1180,10 @@
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.7 5.5 6 .9-4.4 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6-4.4-4.2 6-.9z"/></svg>
               Garantía 30 días
             </div>
+            <div class="badge">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5A2.5 2.5 0 1 1 10 4.5C10 6 12 7 12 7z"/><path d="M12 7h4.5A2.5 2.5 0 1 0 14 4.5C14 6 12 7 12 7z"/></svg>
+              Oferta Cyberday
+            </div>
           </div>
         </div>
 
@@ -1002,9 +1194,9 @@
     </section>
 
     <section class="social-proof" aria-label="Prueba social">
-      <span class="stars">★★★★★</span> +2.400 clientes satisfechos · Envíos a todo Chile
+      <span class="stars">★★★★★</span> Cyberday activo · +2.400 clientas · 14 packs 3x disponibles
       <div>
-        <a class="btn btn-light" href="#comprar">Ver packs con descuento</a>
+        <a class="btn btn-light" href="#comprar">Aprovechar descuento ahora</a>
       </div>
     </section>
 
@@ -1014,9 +1206,9 @@
           <figure class="product-image">
             <img src="{{ 'original-product.jpg' | asset_url }}" alt="Probiótico Íntimo Femenino MYUROCARE.COM en envase rosado">
           </figure>
-          <p class="eyebrow">Producto destacado</p>
+          <p class="eyebrow">Producto Cyberday</p>
           <h2 id="producto-title">Probiótico Íntimo Femenino MYUROCARE.COM</h2>
-          <p class="product-description">Suplemento alimentario en cápsulas pensado para acompañar la rutina diaria de bienestar íntimo femenino adulto. Su formato de 60 cápsulas veganas es práctico, discreto y fácil de incorporar al autocuidado del día a día.</p>
+          <p class="product-description">Suplemento alimentario en cápsulas pensado para acompañar la rutina diaria de bienestar íntimo femenino adulto. Durante Cyberday, los packs tienen precio rebajado y stock limitado para despacho reservado.</p>
           <div class="product-details" aria-label="Detalles del producto">
             <div class="detail-pill">
               <strong>60 cápsulas</strong>
@@ -1033,9 +1225,10 @@
           </div>
           <div class="price-row product-price">
             <span>Desde</span>
+            <del>$21.990</del>
             <strong>$15.990</strong>
           </div>
-          <a class="btn" href="#comprar">Elegir mi pack</a>
+          <a class="btn" href="#comprar">Comprar oferta Cyberday</a>
         </article>
       </div>
     </section>
@@ -1091,8 +1284,8 @@
           </article>
         </div>
         <div class="cta-strip reveal">
-          <p>Elige el pack que más te acomode y recibe MYUROCARE.COM con despacho discreto.</p>
-          <a class="btn" href="#comprar">Elegir mi pack ahora</a>
+          <p>Cyberday dura poco: elige tu pack antes de que suba el precio o se agote el stock popular.</p>
+          <a class="btn" href="#comprar">Ver descuentos Cyberday</a>
         </div>
       </div>
     </section>
@@ -1100,40 +1293,45 @@
     <section class="section pricing" id="comprar" aria-labelledby="precios-title">
       <div class="wrap">
         <div class="section-heading reveal">
-          <p class="eyebrow">Ofertas por pack</p>
-          <h2 id="precios-title">Elige tu pack MYUROCARE.COM</h2>
+          <p class="eyebrow">Cyberday por pack</p>
+          <h2 id="precios-title">Descuentos activos solo por Cyberday</h2>
           <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro, despacho discreto y garantía de 30 días.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card reveal">
+            <div class="sale-tag">Cyber -27%</div>
             <div class="pack-title">PACK 1x</div>
-            <div class="price-old">$15.990</div>
+            <div class="price-old">$21.990</div>
             <div class="price-real">$15.990</div>
-            <div class="saving">Ideal para probar</div>
+            <div class="saving">Ahorra $6.000</div>
             <div class="unit-price">Precio por unidad $15.990</div>
-            <a class="btn" href="#cta-final">Agregar al carrito</a>
+            <div class="stock-note">Quedan 24 packs 1x</div>
+            <a class="btn" href="/cart/42837537423431:1">Agregar al carrito Cyber</a>
             <div class="secure-line">Compra 100% segura</div>
           </article>
 
           <article class="price-card featured reveal">
-            <div class="popular-badge">MÁS POPULAR</div>
+            <div class="popular-badge cyber-badge">MÁS POPULAR · CYBER</div>
             <div class="pack-title">PACK 3x</div>
             <div class="price-old">$47.970</div>
             <div class="price-real">$35.990</div>
             <div class="saving">Ahorra $11.980</div>
             <div class="unit-price">Precio por unidad $11.997</div>
             <div class="pack-note">La opción más elegida por nuestras clientas</div>
-            <a class="btn" href="#cta-final">Agregar al carrito</a>
+            <div class="stock-note">Solo quedan 14 packs 3x</div>
+            <a class="btn" href="/cart/42837537488967:1">Quiero el pack popular</a>
             <div class="secure-line">Compra 100% segura</div>
           </article>
 
           <article class="price-card reveal">
+            <div class="sale-tag">Cyber -16%</div>
             <div class="pack-title">PACK 2x</div>
             <div class="price-old">$31.980</div>
             <div class="price-real">$26.990</div>
             <div class="saving">Ahorra $4.990</div>
             <div class="unit-price">Precio por unidad $13.495</div>
-            <a class="btn" href="#cta-final">Agregar al carrito</a>
+            <div class="stock-note">Quedan 18 packs 2x</div>
+            <a class="btn" href="/cart/42837537456199:1">Agregar al carrito Cyber</a>
             <div class="secure-line">Compra 100% segura</div>
           </article>
         </div>
@@ -1272,16 +1470,24 @@
 
     <section class="section final-cta" id="cta-final" aria-labelledby="cta-title">
       <div class="wrap reveal">
-        <h2 id="cta-title">Stock limitado para despacho inmediato</h2>
-        <p>Compra hoy MYUROCARE.COM y recibe un producto de bienestar íntimo con presentación premium, pago seguro y garantía de 30 días.</p>
+        <h2 id="cta-title">Cyberday termina pronto</h2>
+        <p>Compra hoy MYUROCARE.COM con precio rebajado, despacho reservado, pago seguro y garantía de 30 días. Cuando se acabe el stock Cyber, los precios vuelven a normal.</p>
         <div>
-          <span class="stock">Solo quedan 14 unidades disponibles</span>
-          <span class="timer" id="timer">Oferta termina en 03:00:00</span>
+          <span class="stock">Solo quedan 14 packs 3x disponibles</span>
+          <span class="timer" data-countdown-label>Oferta termina en 03:00:00</span>
         </div>
-        <a class="btn btn-light" href="#comprar">Elegir pack ahora</a>
+        <a class="btn btn-light" href="#comprar">Comprar antes que termine</a>
       </div>
     </section>
   </main>
+
+  <div class="mobile-cyber-cta" aria-label="Oferta Cyberday fija">
+    <div>
+      <strong>Cyberday MYUROCARE</strong>
+      <small>Desde $15.990 · quedan 14 packs 3x</small>
+    </div>
+    <a class="btn" href="#comprar">Comprar</a>
+  </div>
 
   <footer class="footer">
     <div class="footer-grid">
@@ -1362,14 +1568,20 @@ const revealObserver = new IntersectionObserver((entries) => {
       });
     });
 
-    const timer = document.getElementById("timer");
+    const countdownHours = document.querySelectorAll("[data-countdown-hours]");
+    const countdownMinutes = document.querySelectorAll("[data-countdown-minutes]");
+    const countdownSeconds = document.querySelectorAll("[data-countdown-seconds]");
+    const countdownLabels = document.querySelectorAll("[data-countdown-label]");
     let secondsLeft = 3 * 60 * 60;
 
     function renderTimer() {
       const hours = String(Math.floor(secondsLeft / 3600)).padStart(2, "0");
       const minutes = String(Math.floor((secondsLeft % 3600) / 60)).padStart(2, "0");
       const seconds = String(secondsLeft % 60).padStart(2, "0");
-      timer.textContent = `Oferta termina en ${hours}:${minutes}:${seconds}`;
+      countdownHours.forEach((element) => { element.textContent = hours; });
+      countdownMinutes.forEach((element) => { element.textContent = minutes; });
+      countdownSeconds.forEach((element) => { element.textContent = seconds; });
+      countdownLabels.forEach((element) => { element.textContent = `Oferta termina en ${hours}:${minutes}:${seconds}`; });
       secondsLeft = Math.max(0, secondsLeft - 1);
     }
 
