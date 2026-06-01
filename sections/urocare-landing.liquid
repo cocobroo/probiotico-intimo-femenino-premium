@@ -374,6 +374,77 @@
       transform: scale(1.025);
     }
 
+    .product-showcase {
+      background: var(--cream);
+    }
+
+    .product-panel {
+      display: grid;
+      justify-items: center;
+      gap: 1rem;
+      width: min(900px, 100%);
+      margin: 0 auto;
+      padding: clamp(1.25rem, 5vw, 2.6rem);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .product-image {
+      width: min(420px, 100%);
+      margin: 0;
+      padding: clamp(0.85rem, 3vw, 1.3rem);
+      border-radius: 28px;
+      background: linear-gradient(180deg, var(--shell), var(--white));
+    }
+
+    .product-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+    }
+
+    .product-description {
+      max-width: 640px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .product-details {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+      width: min(720px, 100%);
+      margin: 0.35rem auto 0;
+    }
+
+    .detail-pill {
+      display: grid;
+      justify-items: center;
+      gap: 0.2rem;
+      padding: 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--cream);
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .detail-pill strong {
+      color: var(--wine);
+      font-size: 0.95rem;
+    }
+
+    .product-price {
+      width: min(360px, 100%);
+      margin-top: 0.35rem;
+    }
+
     .benefits {
       display: grid;
       grid-template-columns: 1fr;
@@ -816,6 +887,10 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
+      .product-details {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .price-card.featured {
         transform: scale(1.06);
       }
@@ -933,6 +1008,38 @@
       </div>
     </section>
 
+    <section class="section product-showcase" id="producto" aria-labelledby="producto-title">
+      <div class="wrap">
+        <article class="product-panel reveal">
+          <figure class="product-image">
+            <img src="{{ 'original-product.jpg' | asset_url }}" alt="Probiótico Íntimo Femenino MYUROCARE.COM en envase rosado">
+          </figure>
+          <p class="eyebrow">Producto destacado</p>
+          <h2 id="producto-title">Probiótico Íntimo Femenino MYUROCARE.COM</h2>
+          <p class="product-description">Suplemento alimentario en cápsulas pensado para acompañar la rutina diaria de bienestar íntimo femenino adulto. Su formato de 60 cápsulas veganas es práctico, discreto y fácil de incorporar al autocuidado del día a día.</p>
+          <div class="product-details" aria-label="Detalles del producto">
+            <div class="detail-pill">
+              <strong>60 cápsulas</strong>
+              Formato práctico para uso diario.
+            </div>
+            <div class="detail-pill">
+              <strong>Vegano</strong>
+              Cápsulas de suplemento alimentario.
+            </div>
+            <div class="detail-pill">
+              <strong>Compra discreta</strong>
+              Pedido protegido y despacho reservado.
+            </div>
+          </div>
+          <div class="price-row product-price">
+            <span>Desde</span>
+            <strong>$15.990</strong>
+          </div>
+          <a class="btn" href="#comprar">Elegir mi pack</a>
+        </article>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="lifestyle-title">
       <div class="wrap lifestyle-grid">
         <figure class="lifestyle-image reveal">
@@ -1004,7 +1111,7 @@
             <div class="price-real">$15.990</div>
             <div class="saving">Ideal para probar</div>
             <div class="unit-price">Precio por unidad $15.990</div>
-            <a class="btn" href="https://wa.me/">Agregar al carrito</a>
+            <a class="btn" href="#cta-final">Agregar al carrito</a>
             <div class="secure-line">Compra 100% segura</div>
           </article>
 
@@ -1016,7 +1123,7 @@
             <div class="saving">Ahorra $11.980</div>
             <div class="unit-price">Precio por unidad $11.997</div>
             <div class="pack-note">La opción más elegida por nuestras clientas</div>
-            <a class="btn" href="https://wa.me/">Agregar al carrito</a>
+            <a class="btn" href="#cta-final">Agregar al carrito</a>
             <div class="secure-line">Compra 100% segura</div>
           </article>
 
@@ -1026,7 +1133,7 @@
             <div class="price-real">$26.990</div>
             <div class="saving">Ahorra $4.990</div>
             <div class="unit-price">Precio por unidad $13.495</div>
-            <a class="btn" href="https://wa.me/">Agregar al carrito</a>
+            <a class="btn" href="#cta-final">Agregar al carrito</a>
             <div class="secure-line">Compra 100% segura</div>
           </article>
         </div>
@@ -1199,6 +1306,30 @@
       </div>
     </div>
   </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Probiótico Íntimo Femenino MYUROCARE.COM",
+  "brand": {
+    "@type": "Brand",
+    "name": "MYUROCARE.COM"
+  },
+  "image": [
+    "{{ 'hero.png' | asset_url }}",
+    "{{ 'original-product.jpg' | asset_url }}"
+  ],
+  "description": "Suplemento alimentario en cápsulas para acompañar la rutina diaria de bienestar íntimo femenino adulto. Formato de 60 cápsulas veganas, compra discreta y despacho reservado.",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "CLP",
+    "lowPrice": "15990",
+    "highPrice": "35990",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
 
 <script>
 const revealObserver = new IntersectionObserver((entries) => {
