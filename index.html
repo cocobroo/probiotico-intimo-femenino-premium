@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flora Rosa | Probiótico íntimo femenino</title>
-  <meta name="description" content="Landing premium de Flora Rosa, probiótico íntimo femenino para una rutina de autocuidado simple, discreta y consciente.">
+  <title>Urocare.cl | Probiótico íntimo femenino</title>
+  <meta name="description" content="Landing premium de Urocare.cl, probiótico íntimo femenino para una rutina de autocuidado simple, discreta y consciente.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,6 +38,7 @@
       color: var(--ink);
       background: var(--cream);
       letter-spacing: 0;
+      text-align: center;
     }
 
     img {
@@ -70,7 +71,8 @@
       z-index: 30;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 1rem;
       padding: 0.9rem clamp(1rem, 4vw, 4.5rem);
       border-bottom: 1px solid var(--line);
@@ -84,6 +86,7 @@
       font-weight: 800;
       line-height: 0.95;
       letter-spacing: 0;
+      text-align: center;
     }
 
     .logo small {
@@ -133,6 +136,7 @@
     .wrap {
       width: min(1180px, 100%);
       margin: 0 auto;
+      text-align: center;
     }
 
     .hero {
@@ -149,6 +153,8 @@
       grid-template-columns: 1fr;
       gap: clamp(2rem, 6vw, 5rem);
       align-items: center;
+      justify-content: center;
+      justify-items: center;
     }
 
     .eyebrow {
@@ -166,6 +172,8 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .eyebrow::before {
@@ -186,6 +194,8 @@
     h1 {
       max-width: 11ch;
       margin-bottom: 1rem;
+      margin-left: auto;
+      margin-right: auto;
       color: var(--wine);
       font-size: clamp(2.6rem, 11vw, 5.8rem);
       line-height: 0.94;
@@ -210,6 +220,8 @@
     .lead {
       max-width: 42rem;
       margin-bottom: 1.45rem;
+      margin-left: auto;
+      margin-right: auto;
       color: var(--muted);
       font-size: clamp(1rem, 2.2vw, 1.18rem);
       line-height: 1.75;
@@ -218,6 +230,7 @@
     .price-row {
       display: flex;
       align-items: baseline;
+      justify-content: center;
       gap: 0.65rem;
       margin-bottom: 1.3rem;
       color: var(--wine);
@@ -232,6 +245,7 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 0.8rem;
       align-items: center;
     }
@@ -256,6 +270,9 @@
       grid-template-columns: 1fr;
       gap: 0.75rem;
       margin-top: 1.45rem;
+      width: min(100%, 760px);
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .badge,
@@ -306,6 +323,9 @@
     .section-heading {
       max-width: 700px;
       margin-bottom: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
 
     .section-heading p,
@@ -362,7 +382,7 @@
       place-items: center;
       width: 3rem;
       height: 3rem;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
       border-radius: 999px;
       background: var(--shell);
       color: var(--berry);
@@ -385,7 +405,7 @@
       place-items: center;
       width: 2.65rem;
       height: 2.65rem;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
       border-radius: 999px;
       background: var(--wine);
       color: var(--white);
@@ -439,7 +459,7 @@
       place-items: center;
       width: 3rem;
       height: 3rem;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--rose), var(--berry));
       color: var(--white);
@@ -478,7 +498,7 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 1rem;
       padding: 1.1rem 1.2rem;
       border: 0;
@@ -486,7 +506,7 @@
       color: var(--wine);
       font: inherit;
       font-weight: 800;
-      text-align: left;
+      text-align: center;
       cursor: pointer;
     }
 
@@ -561,8 +581,10 @@
       grid-template-columns: 1fr;
       gap: 1.25rem;
       align-items: center;
+      justify-items: center;
       width: min(1180px, 100%);
       margin: 0 auto;
+      text-align: center;
     }
 
     .footer .logo {
@@ -573,6 +595,7 @@
     .payments {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 0.65rem;
     }
 
@@ -623,14 +646,15 @@
       }
 
       .footer-grid {
-        grid-template-columns: 0.9fr 1.2fr;
+        grid-template-columns: 1fr;
       }
     }
 
     @media (min-width: 920px) {
       .hero-grid,
       .lifestyle-grid {
-        grid-template-columns: 0.92fr 1.08fr;
+        grid-template-columns: minmax(0, 920px);
+        justify-content: center;
       }
 
       .hero-card {
@@ -643,7 +667,7 @@
       }
 
       .lifestyle-grid {
-        grid-template-columns: 1fr 0.86fr;
+        grid-template-columns: minmax(0, 920px);
       }
 
       .benefits {
@@ -661,7 +685,7 @@
       }
 
       .footer-grid {
-        grid-template-columns: 0.72fr 1fr 1fr;
+        grid-template-columns: 1fr;
       }
     }
 
@@ -708,7 +732,7 @@
   <div class="topbar">Envío gratis sobre $29.990 · Garantía 30 días · Pago 100% seguro</div>
 
   <nav class="nav" aria-label="Navegación principal">
-    <a class="logo" href="#inicio">Flora Rosa<small>Intimate wellness</small></a>
+    <a class="logo" href="#inicio">Urocare.cl<small>Bienestar íntimo</small></a>
     <a class="btn" href="#comprar">Comprar ahora</a>
   </nav>
 
@@ -721,7 +745,7 @@
           <p class="lead">Un probiótico femenino en cápsulas para acompañar tu autocuidado diario con una experiencia discreta, moderna y fácil de mantener.</p>
           <div class="price-row">
             <span>Precio lanzamiento</span>
-            <strong>[PRECIO]</strong>
+            <strong>$15.990</strong>
           </div>
           <div class="hero-actions">
             <a class="btn" href="#comprar">Comprar ahora</a>
@@ -744,7 +768,7 @@
         </div>
 
         <figure class="hero-card reveal">
-          <img src="hero.png" alt="Frasco rosado de probiótico íntimo femenino Flora Rosa">
+          <img src="hero.png" alt="Frasco rosado de probiótico íntimo femenino Urocare.cl">
         </figure>
       </div>
     </section>
@@ -761,7 +785,7 @@
         <div class="lifestyle-copy reveal">
           <p class="eyebrow">Autocuidado sin incomodidad</p>
           <h2 id="lifestyle-title">Sentirte tranquila también es parte de la rutina</h2>
-          <p>Flora Rosa está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con despacho discreto y una presentación que se siente moderna, limpia y cercana.</p>
+          <p>Urocare.cl está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con despacho discreto y una presentación que se siente moderna, limpia y cercana.</p>
           <a class="btn" href="#comprar">Lo quiero en mi rutina</a>
         </div>
       </div>
@@ -840,10 +864,10 @@
         </div>
         <div class="gallery-grid">
           <figure class="gallery-item reveal">
-            <img src="selfie2.png" alt="Mujer adulta sosteniendo Flora Rosa en una rutina de baño">
+            <img src="selfie2.png" alt="Mujer adulta sosteniendo Urocare.cl en una rutina de baño">
           </figure>
           <figure class="gallery-item reveal">
-            <img src="flatlay.png" alt="Flatlay editorial con Flora Rosa, flores y cápsulas rosadas">
+            <img src="flatlay.png" alt="Flatlay editorial con Urocare.cl, flores y cápsulas rosadas">
           </figure>
           <figure class="gallery-item reveal">
             <img src="lifestyle.png" alt="Mujer adulta sosteniendo el probiótico íntimo femenino en ambiente cálido">
@@ -885,7 +909,7 @@
       <div class="wrap story reveal">
         <p class="eyebrow">Nuestra historia</p>
         <h2 id="historia-title">Cuidado íntimo con más naturalidad</h2>
-        <p>Flora Rosa nace desde una idea simple: que comprar productos de bienestar íntimo no tenga que sentirse frío, confuso ni incómodo. Queremos acercar una experiencia más estética, privada y honesta, para que cada mujer pueda elegir su autocuidado con calma y confianza.</p>
+        <p>Urocare.cl nace desde una idea simple: que comprar productos de bienestar íntimo no tenga que sentirse frío, confuso ni incómodo. Queremos acercar una experiencia más estética, privada y honesta, para que cada mujer pueda elegir su autocuidado con calma y confianza.</p>
       </div>
     </section>
 
@@ -931,12 +955,12 @@
     <section class="section final-cta" id="comprar" aria-labelledby="cta-title">
       <div class="wrap reveal">
         <h2 id="cta-title">Stock limitado para despacho inmediato</h2>
-        <p>Compra hoy Flora Rosa y recibe un producto de bienestar íntimo con presentación premium, pago seguro y garantía de 30 días.</p>
+        <p>Compra hoy Urocare.cl y recibe un producto de bienestar íntimo con presentación premium, pago seguro y garantía de 30 días.</p>
         <div>
           <span class="stock">Solo quedan 14 unidades disponibles</span>
           <span class="timer" id="timer">Oferta termina en 03:00:00</span>
         </div>
-        <a class="btn btn-light" href="https://wa.me/">Comprar ahora · [PRECIO]</a>
+        <a class="btn btn-light" href="https://wa.me/">Comprar ahora · $15.990</a>
       </div>
     </section>
   </main>
@@ -944,8 +968,8 @@
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <a class="logo" href="#inicio">Flora Rosa<small>Intimate wellness</small></a>
-        <p class="copyright">© 2026 Flora Rosa. Todos los derechos reservados.</p>
+        <a class="logo" href="#inicio">Urocare.cl<small>Bienestar íntimo</small></a>
+        <p class="copyright">© 2026 Urocare.cl. Todos los derechos reservados.</p>
       </div>
       <div class="footer-links" aria-label="Links de ayuda">
         <a class="footer-link" href="#">Contacto</a>
