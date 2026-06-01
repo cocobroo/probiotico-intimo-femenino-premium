@@ -71,6 +71,10 @@
     }
 
     .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.72rem;
       min-width: 0;
       color: var(--wine);
       font-weight: 800;
@@ -79,9 +83,25 @@
       text-align: center;
     }
 
+    .brand-avatar {
+      width: 3rem;
+      height: 3rem;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      object-fit: cover;
+      background: var(--white);
+      box-shadow: 0 12px 28px rgba(168, 20, 66, 0.16);
+    }
+
+    .brand-copy {
+      display: grid;
+      justify-items: center;
+      gap: 0.2rem;
+      overflow-wrap: anywhere;
+    }
+
     .logo small {
       display: block;
-      margin-top: 0.24rem;
       color: var(--muted);
       font-size: 0.62rem;
       font-weight: 700;
@@ -704,6 +724,11 @@
       color: var(--white);
     }
 
+    .footer .brand-avatar {
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
     .footer-links,
     .payments {
       display: flex;
@@ -819,6 +844,11 @@
         font-size: 0.9rem;
       }
 
+      .brand-avatar {
+        width: 2.45rem;
+        height: 2.45rem;
+      }
+
       .logo small {
         font-size: 0.54rem;
       }
@@ -852,7 +882,10 @@
 <div class="topbar">Envío gratis sobre $29.990 · Garantía 30 días · Pago 100% seguro</div>
 
   <nav class="nav" aria-label="Navegación principal">
-    <a class="logo" href="#inicio">Urocare.cl<small>Bienestar íntimo</small></a>
+    <a class="logo" href="#inicio" aria-label="MYUROCARE.COM">
+      <img class="brand-avatar" src="{{ 'instagram-profile.png' | asset_url }}" alt="Logo MYUROCARE.COM">
+      <span class="brand-copy">MYUROCARE.COM<small>Bienestar íntimo</small></span>
+    </a>
     <a class="btn" href="#comprar">Comprar ahora</a>
   </nav>
 
@@ -888,7 +921,7 @@
         </div>
 
         <figure class="hero-card reveal">
-          <img src="{{ 'hero.png' | asset_url }}" alt="Frasco rosado de probiótico íntimo femenino Urocare.cl">
+          <img src="{{ 'hero.png' | asset_url }}" alt="Frasco rosado de probiótico íntimo femenino MYUROCARE.COM">
         </figure>
       </div>
     </section>
@@ -908,7 +941,7 @@
         <div class="lifestyle-copy reveal">
           <p class="eyebrow">Autocuidado sin incomodidad</p>
           <h2 id="lifestyle-title">Sentirte tranquila también es parte de la rutina</h2>
-          <p>Urocare.cl está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con despacho discreto y una presentación que se siente moderna, limpia y cercana.</p>
+          <p>MYUROCARE.COM está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con despacho discreto y una presentación que se siente moderna, limpia y cercana.</p>
           <a class="btn" href="#comprar">Lo quiero en mi rutina</a>
         </div>
       </div>
@@ -951,7 +984,7 @@
           </article>
         </div>
         <div class="cta-strip reveal">
-          <p>Elige el pack que más te acomode y recibe Urocare.cl con despacho discreto.</p>
+          <p>Elige el pack que más te acomode y recibe MYUROCARE.COM con despacho discreto.</p>
           <a class="btn" href="#comprar">Elegir mi pack ahora</a>
         </div>
       </div>
@@ -961,7 +994,7 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <p class="eyebrow">Ofertas por pack</p>
-          <h2 id="precios-title">Elige tu pack Urocare.cl</h2>
+          <h2 id="precios-title">Elige tu pack MYUROCARE.COM</h2>
           <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro, despacho discreto y garantía de 30 días.</p>
         </div>
         <div class="pricing-grid">
@@ -1034,10 +1067,10 @@
         </div>
         <div class="gallery-grid">
           <figure class="gallery-item reveal">
-            <img src="{{ 'selfie2.png' | asset_url }}" alt="Mujer adulta sosteniendo Urocare.cl en una rutina de baño">
+            <img src="{{ 'selfie2.png' | asset_url }}" alt="Mujer adulta sosteniendo MYUROCARE.COM en una rutina de baño">
           </figure>
           <figure class="gallery-item reveal">
-            <img src="{{ 'flatlay.png' | asset_url }}" alt="Flatlay editorial con Urocare.cl, flores y cápsulas rosadas">
+            <img src="{{ 'flatlay.png' | asset_url }}" alt="Flatlay editorial con MYUROCARE.COM, flores y cápsulas rosadas">
           </figure>
           <figure class="gallery-item reveal">
             <img src="{{ 'lifestyle.png' | asset_url }}" alt="Mujer adulta sosteniendo el probiótico íntimo femenino en ambiente cálido">
@@ -1087,7 +1120,7 @@
       <div class="wrap story reveal">
         <p class="eyebrow">Nuestra historia</p>
         <h2 id="historia-title">Cuidado íntimo con más naturalidad</h2>
-        <p>Urocare.cl nace desde una idea simple: que comprar productos de bienestar íntimo no tenga que sentirse frío, confuso ni incómodo. Queremos acercar una experiencia más estética, privada y honesta, para que cada mujer pueda elegir su autocuidado con calma y confianza.</p>
+        <p>MYUROCARE.COM nace desde una idea simple: que comprar productos de bienestar íntimo no tenga que sentirse frío, confuso ni incómodo. Queremos acercar una experiencia más estética, privada y honesta, para que cada mujer pueda elegir su autocuidado con calma y confianza.</p>
       </div>
     </section>
 
@@ -1133,7 +1166,7 @@
     <section class="section final-cta" id="cta-final" aria-labelledby="cta-title">
       <div class="wrap reveal">
         <h2 id="cta-title">Stock limitado para despacho inmediato</h2>
-        <p>Compra hoy Urocare.cl y recibe un producto de bienestar íntimo con presentación premium, pago seguro y garantía de 30 días.</p>
+        <p>Compra hoy MYUROCARE.COM y recibe un producto de bienestar íntimo con presentación premium, pago seguro y garantía de 30 días.</p>
         <div>
           <span class="stock">Solo quedan 14 unidades disponibles</span>
           <span class="timer" id="timer">Oferta termina en 03:00:00</span>
@@ -1146,8 +1179,11 @@
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <a class="logo" href="#inicio">Urocare.cl<small>Bienestar íntimo</small></a>
-        <p class="copyright">© 2026 Urocare.cl. Todos los derechos reservados.</p>
+        <a class="logo" href="#inicio" aria-label="MYUROCARE.COM">
+          <img class="brand-avatar" src="{{ 'instagram-profile.png' | asset_url }}" alt="Logo MYUROCARE.COM">
+          <span class="brand-copy">MYUROCARE.COM<small>Bienestar íntimo</small></span>
+        </a>
+        <p class="copyright">© 2026 MYUROCARE.COM. Todos los derechos reservados.</p>
       </div>
       <div class="footer-links" aria-label="Links de ayuda">
         <a class="footer-link" href="#">Contacto</a>
