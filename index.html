@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flora Rosa | Probiótico íntimo femenino</title>
+  <meta name="description" content="Landing premium de Flora Rosa, probiótico íntimo femenino para una rutina de autocuidado simple, discreta y consciente.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fffaf7;
+      --shell: #fff0f4;
+      --rose-soft: #f7c2cf;
+      --rose: #e7547a;
+      --berry: #a81442;
+      --wine: #35121f;
+      --ink: #21161b;
+      --muted: #755d66;
+      --line: rgba(168, 20, 66, 0.14);
+      --white: #ffffff;
+      --shadow: 0 22px 64px rgba(168, 20, 66, 0.14);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .topbar {
+      background: var(--wine);
+      color: var(--white);
+      padding: 0.68rem 1rem;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem clamp(1rem, 4vw, 4.5rem);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 250, 247, 0.86);
+      backdrop-filter: blur(18px);
+    }
+
+    .logo {
+      min-width: 0;
+      color: var(--wine);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .logo small {
+      display: block;
+      margin-top: 0.24rem;
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.88rem 1.35rem;
+      border: 0;
+      border-radius: 999px;
+      background: var(--berry);
+      color: var(--white);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 18px 42px rgba(168, 20, 66, 0.22);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--wine);
+      box-shadow: 0 24px 52px rgba(53, 18, 31, 0.25);
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--berry);
+      box-shadow: 0 18px 42px rgba(53, 18, 31, 0.16);
+    }
+
+    .section {
+      padding: clamp(3.4rem, 8vw, 6.2rem) clamp(1rem, 4vw, 4.5rem);
+    }
+
+    .wrap {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      overflow: hidden;
+      padding: clamp(2.4rem, 6vw, 5rem) clamp(1rem, 4vw, 4.5rem) clamp(3.4rem, 8vw, 7rem);
+      background:
+        linear-gradient(120deg, rgba(255, 250, 247, 0.98), rgba(255, 240, 244, 0.96)),
+        var(--cream);
+    }
+
+    .hero-grid,
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 1rem;
+      padding: 0.46rem 0.86rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--berry);
+      background: rgba(255, 255, 255, 0.72);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: var(--rose);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin-bottom: 1rem;
+      color: var(--wine);
+      font-size: clamp(2.6rem, 11vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 0.8rem;
+      color: var(--wine);
+      font-size: clamp(2rem, 6vw, 3.75rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 0.55rem;
+      color: var(--wine);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 42rem;
+      margin-bottom: 1.45rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.2vw, 1.18rem);
+      line-height: 1.75;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
+      margin-bottom: 1.3rem;
+      color: var(--wine);
+      font-weight: 800;
+    }
+
+    .price-row strong {
+      font-size: clamp(2rem, 7vw, 3.7rem);
+      line-height: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 32px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 100%;
+      min-height: 360px;
+      object-fit: cover;
+    }
+
+    .badges {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 1.45rem;
+    }
+
+    .badge,
+    .payment,
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .badge {
+      min-height: 3.2rem;
+      padding: 0.84rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--wine);
+      font-size: 0.9rem;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(168, 20, 66, 0.08);
+    }
+
+    .icon {
+      width: 1.1rem;
+      height: 1.1rem;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .social-proof {
+      padding: 1rem clamp(1rem, 4vw, 4.5rem);
+      border-block: 1px solid var(--line);
+      background: var(--white);
+      color: var(--wine);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .stars {
+      color: #b77800;
+      letter-spacing: 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading p,
+    .benefit p,
+    .step p,
+    .testimonial p,
+    .story p,
+    .faq-panel,
+    .lifestyle-copy p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .lifestyle-image {
+      overflow: hidden;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      background: var(--shell);
+    }
+
+    .lifestyle-image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 450ms ease;
+    }
+
+    .lifestyle-image:hover img {
+      transform: scale(1.025);
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .benefit,
+    .step,
+    .testimonial,
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 16px 42px rgba(53, 18, 31, 0.07);
+    }
+
+    .benefit {
+      padding: 1.35rem;
+    }
+
+    .benefit-icon {
+      display: grid;
+      place-items: center;
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 1rem;
+      border-radius: 999px;
+      background: var(--shell);
+      color: var(--berry);
+    }
+
+    .steps {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .step {
+      position: relative;
+      padding: 1.4rem;
+    }
+
+    .step-number {
+      display: inline-grid;
+      place-items: center;
+      width: 2.65rem;
+      height: 2.65rem;
+      margin-bottom: 1rem;
+      border-radius: 999px;
+      background: var(--wine);
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .gallery {
+      background: var(--shell);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      min-height: 280px;
+      border-radius: 30px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      filter: brightness(0.98);
+      transition: transform 420ms ease, filter 420ms ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+      filter: brightness(1.04);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .testimonial {
+      padding: 1.35rem;
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 1rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--rose), var(--berry));
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .person {
+      margin-top: 1rem;
+      color: var(--wine);
+      font-weight: 800;
+    }
+
+    .city {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .story {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .story p {
+      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.2rem;
+      border: 0;
+      background: transparent;
+      color: var(--wine);
+      font: inherit;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq-mark {
+      width: 2rem;
+      height: 2rem;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--shell);
+      color: var(--berry);
+      transition: transform 220ms ease;
+    }
+
+    .faq-question[aria-expanded="true"] .faq-mark {
+      transform: rotate(45deg);
+    }
+
+    .faq-panel {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1.2rem;
+      transition: max-height 260ms ease, padding-bottom 260ms ease;
+    }
+
+    .faq-panel.open {
+      max-height: 220px;
+      padding-bottom: 1.2rem;
+    }
+
+    .final-cta {
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(168, 20, 66, 0.96), rgba(53, 18, 31, 0.98)),
+        var(--berry);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .final-cta h2,
+    .final-cta p {
+      color: var(--white);
+    }
+
+    .final-cta p {
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .stock,
+    .timer {
+      display: inline-flex;
+      margin: 0.55rem 0.35rem 1.25rem;
+      padding: 0.58rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 2.2rem clamp(1rem, 4vw, 4.5rem);
+      background: var(--wine);
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      align-items: center;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .footer .logo {
+      color: var(--white);
+    }
+
+    .footer-links,
+    .payments {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .footer-link,
+    .payment {
+      padding: 0.52rem 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .copyright {
+      margin: 0;
+      font-size: 0.82rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 640px) {
+      .badges,
+      .benefits,
+      .steps,
+      .testimonials {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery-item:nth-child(2) {
+        margin-top: 2.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 0.9fr 1.2fr;
+      }
+    }
+
+    @media (min-width: 920px) {
+      .hero-grid,
+      .lifestyle-grid {
+        grid-template-columns: 0.92fr 1.08fr;
+      }
+
+      .hero-card {
+        min-height: 520px;
+      }
+
+      .hero-card img {
+        height: 100%;
+        min-height: 520px;
+      }
+
+      .lifestyle-grid {
+        grid-template-columns: 1fr 0.86fr;
+      }
+
+      .benefits {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .steps::before {
+        content: "";
+        position: absolute;
+        top: 2.75rem;
+        left: 12%;
+        right: 12%;
+        height: 1px;
+        background: var(--line);
+      }
+
+      .footer-grid {
+        grid-template-columns: 0.72fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav {
+        padding: 0.75rem 0.86rem;
+      }
+
+      .logo {
+        font-size: 0.9rem;
+      }
+
+      .logo small {
+        font-size: 0.54rem;
+      }
+
+      .nav .btn {
+        min-height: 2.55rem;
+        padding: 0.68rem 0.85rem;
+        font-size: 0.82rem;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Envío gratis sobre $29.990 · Garantía 30 días · Pago 100% seguro</div>
+
+  <nav class="nav" aria-label="Navegación principal">
+    <a class="logo" href="#inicio">Flora Rosa<small>Intimate wellness</small></a>
+    <a class="btn" href="#comprar">Comprar ahora</a>
+  </nav>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Rutina diaria premium</p>
+          <h1 id="hero-title">Tu rutina íntima, más simple</h1>
+          <p class="lead">Un probiótico femenino en cápsulas para acompañar tu autocuidado diario con una experiencia discreta, moderna y fácil de mantener.</p>
+          <div class="price-row">
+            <span>Precio lanzamiento</span>
+            <strong>[PRECIO]</strong>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="#comprar">Comprar ahora</a>
+            <a class="btn btn-light" href="#faq">Ver preguntas</a>
+          </div>
+          <div class="badges" aria-label="Beneficios de compra">
+            <div class="badge">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+              Envío gratis
+            </div>
+            <div class="badge">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-5"/></svg>
+              Pago seguro
+            </div>
+            <div class="badge">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.7 5.5 6 .9-4.4 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6-4.4-4.2 6-.9z"/></svg>
+              Garantía 30 días
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero-card reveal">
+          <img src="hero.png" alt="Frasco rosado de probiótico íntimo femenino Flora Rosa">
+        </figure>
+      </div>
+    </section>
+
+    <section class="social-proof" aria-label="Prueba social">
+      <span class="stars">★★★★★</span> +2.400 clientes satisfechos · Envíos a todo Chile
+    </section>
+
+    <section class="section" aria-labelledby="lifestyle-title">
+      <div class="wrap lifestyle-grid">
+        <figure class="lifestyle-image reveal">
+          <img src="selfie1.png" alt="Mujer adulta mostrando el probiótico íntimo femenino en casa">
+        </figure>
+        <div class="lifestyle-copy reveal">
+          <p class="eyebrow">Autocuidado sin incomodidad</p>
+          <h2 id="lifestyle-title">Sentirte tranquila también es parte de la rutina</h2>
+          <p>Flora Rosa está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con despacho discreto y una presentación que se siente moderna, limpia y cercana.</p>
+          <a class="btn" href="#comprar">Lo quiero en mi rutina</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="beneficios-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="beneficios-title">Beneficios que se sienten simples</h2>
+          <p>Una compra diseñada para que el autocuidado íntimo sea claro, privado y fácil de incorporar al día a día.</p>
+        </div>
+        <div class="benefits">
+          <article class="benefit reveal">
+            <div class="benefit-icon">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l2 5v10a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8z"/><path d="M8 8h8"/><path d="M10 13h4"/></svg>
+            </div>
+            <h3>Formato práctico</h3>
+            <p>Cápsulas fáciles de sumar a tu rutina diaria, con envase compacto y discreto.</p>
+          </article>
+          <article class="benefit reveal">
+            <div class="benefit-icon">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg>
+            </div>
+            <h3>Despacho reservado</h3>
+            <p>Preparamos tu pedido con empaque sobrio y envío a distintas comunas de Chile.</p>
+          </article>
+          <article class="benefit reveal">
+            <div class="benefit-icon">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2.7A4 4 0 0 1 19 10c0 6.6-7 11-7 11z"/></svg>
+            </div>
+            <h3>Enfoque femenino</h3>
+            <p>Una experiencia pensada para bienestar íntimo adulto, sin tabúes ni exageraciones.</p>
+          </article>
+          <article class="benefit reveal">
+            <div class="benefit-icon">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/><path d="M4 4h16v16H4z"/></svg>
+            </div>
+            <h3>Compra protegida</h3>
+            <p>Pago seguro, garantía de 30 días y atención rápida si necesitas ayuda.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="funciona-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="funciona-title">Cómo funciona</h2>
+          <p>Pedido online, despacho discreto y una rutina sencilla desde que llega a tu casa.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-number">1</span>
+            <h3>Elige y paga online</h3>
+            <p>Compra en pocos pasos, con medios de pago seguros y confirmación inmediata.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">2</span>
+            <h3>Recibe tu pedido</h3>
+            <p>Enviamos tu producto con empaque discreto y seguimiento hasta la entrega.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">3</span>
+            <h3>Súmalo a tu día</h3>
+            <p>Lee las indicaciones del envase e incorpóralo como complemento de bienestar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" aria-labelledby="galeria-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="galeria-title">Galería</h2>
+          <p>Texturas suaves, tonos rosados y una estética limpia para un producto de autocuidado moderno.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <img src="selfie2.png" alt="Mujer adulta sosteniendo Flora Rosa en una rutina de baño">
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="flatlay.png" alt="Flatlay editorial con Flora Rosa, flores y cápsulas rosadas">
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="lifestyle.png" alt="Mujer adulta sosteniendo el probiótico íntimo femenino en ambiente cálido">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="testimonios-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="testimonios-title">Lo que dicen quienes ya compraron</h2>
+          <p>Comentarios reales en tono de experiencia: compra simple, despacho discreto y presentación cuidada.</p>
+        </div>
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <div class="avatar" aria-hidden="true">CM</div>
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>"Me gustó que la compra fuera discreta. Llegó rápido a Ñuñoa y el envase se ve tal cual en las fotos."</p>
+            <div class="person">Camila Morales<span class="city">Ñuñoa</span></div>
+          </article>
+          <article class="testimonial reveal">
+            <div class="avatar" aria-hidden="true">VR</div>
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>"Lo compré para ordenar mi rutina de autocuidado. La página era clara y pude pagar con Webpay sin problemas."</p>
+            <div class="person">Valentina Rojas<span class="city">Concepción</span></div>
+          </article>
+          <article class="testimonial reveal">
+            <div class="avatar" aria-hidden="true">FS</div>
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <p>"La atención fue rápida y el empaque venía muy cuidado. Se siente como un producto premium, no algo incómodo de comprar."</p>
+            <div class="person">Francisca Silva<span class="city">La Serena</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="historia-title">
+      <div class="wrap story reveal">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2 id="historia-title">Cuidado íntimo con más naturalidad</h2>
+        <p>Flora Rosa nace desde una idea simple: que comprar productos de bienestar íntimo no tenga que sentirse frío, confuso ni incómodo. Queremos acercar una experiencia más estética, privada y honesta, para que cada mujer pueda elegir su autocuidado con calma y confianza.</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="faq-title">Preguntas frecuentes</h2>
+          <p>Respuestas claras antes de comprar.</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              ¿Es un medicamento?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">No. Es un suplemento alimentario y no reemplaza una evaluación médica. Si estás embarazada, en tratamiento o tienes dudas de salud, consulta con un profesional.</div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              ¿Cómo se usa?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">Sigue las indicaciones del envase y no excedas la dosis sugerida. Está pensado como complemento de una rutina de bienestar diaria.</div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              ¿El envío es discreto?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">Sí. Usamos un empaque sobrio y protegido, sin detalles innecesarios en el exterior del pedido.</div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              ¿Qué medios de pago aceptan?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">Puedes pagar con Visa, Mastercard, Webpay y Mercado Pago. El pago se procesa en una plataforma segura.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="comprar" aria-labelledby="cta-title">
+      <div class="wrap reveal">
+        <h2 id="cta-title">Stock limitado para despacho inmediato</h2>
+        <p>Compra hoy Flora Rosa y recibe un producto de bienestar íntimo con presentación premium, pago seguro y garantía de 30 días.</p>
+        <div>
+          <span class="stock">Solo quedan 14 unidades disponibles</span>
+          <span class="timer" id="timer">Oferta termina en 03:00:00</span>
+        </div>
+        <a class="btn btn-light" href="https://wa.me/">Comprar ahora · [PRECIO]</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#inicio">Flora Rosa<small>Intimate wellness</small></a>
+        <p class="copyright">© 2026 Flora Rosa. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-links" aria-label="Links de ayuda">
+        <a class="footer-link" href="#">Contacto</a>
+        <a class="footer-link" href="#">Envíos</a>
+        <a class="footer-link" href="#">Devoluciones</a>
+        <a class="footer-link" href="#">T&C</a>
+      </div>
+      <div class="payments" aria-label="Medios de pago">
+        <span class="payment">Visa</span>
+        <span class="payment">Mastercard</span>
+        <span class="payment">Webpay</span>
+        <span class="payment">Mercado Pago</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    document.querySelectorAll(".faq-question").forEach((button) => {
+      button.addEventListener("click", () => {
+        const panel = button.nextElementSibling;
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+
+        document.querySelectorAll(".faq-question").forEach((otherButton) => {
+          otherButton.setAttribute("aria-expanded", "false");
+          otherButton.nextElementSibling.classList.remove("open");
+        });
+
+        if (!isOpen) {
+          button.setAttribute("aria-expanded", "true");
+          panel.classList.add("open");
+        }
+      });
+    });
+
+    const timer = document.getElementById("timer");
+    let secondsLeft = 3 * 60 * 60;
+
+    function renderTimer() {
+      const hours = String(Math.floor(secondsLeft / 3600)).padStart(2, "0");
+      const minutes = String(Math.floor((secondsLeft % 3600) / 60)).padStart(2, "0");
+      const seconds = String(secondsLeft % 60).padStart(2, "0");
+      timer.textContent = `Oferta termina en ${hours}:${minutes}:${seconds}`;
+      secondsLeft = Math.max(0, secondsLeft - 1);
+    }
+
+    renderTimer();
+    setInterval(renderTimer, 1000);
+  </script>
+</body>
+</html>
