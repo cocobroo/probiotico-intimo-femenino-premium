@@ -1,15 +1,5 @@
-<!doctype html>
-<html lang="es-CL">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Urocare.cl | Probiótico íntimo femenino</title>
-  <meta name="description" content="Landing premium de Urocare.cl, probiótico íntimo femenino para una rutina de autocuidado simple, discreta y consciente.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
+<style>
+:root {
       --cream: #fffaf7;
       --shell: #fff0f4;
       --rose-soft: #f7c2cf;
@@ -857,10 +847,9 @@
         transform: none;
       }
     }
-  </style>
-</head>
-<body>
-  <div class="topbar">Envío gratis sobre $29.990 · Garantía 30 días · Pago 100% seguro</div>
+</style>
+
+<div class="topbar">Envío gratis sobre $29.990 · Garantía 30 días · Pago 100% seguro</div>
 
   <nav class="nav" aria-label="Navegación principal">
     <a class="logo" href="#inicio">Urocare.cl<small>Bienestar íntimo</small></a>
@@ -899,7 +888,7 @@
         </div>
 
         <figure class="hero-card reveal">
-          <img src="hero.png" alt="Frasco rosado de probiótico íntimo femenino Urocare.cl">
+          <img src="{{ 'hero.png' | asset_url }}" alt="Frasco rosado de probiótico íntimo femenino Urocare.cl">
         </figure>
       </div>
     </section>
@@ -914,7 +903,7 @@
     <section class="section" aria-labelledby="lifestyle-title">
       <div class="wrap lifestyle-grid">
         <figure class="lifestyle-image reveal">
-          <img src="selfie1.png" alt="Mujer adulta mostrando el probiótico íntimo femenino en casa">
+          <img src="{{ 'selfie1.png' | asset_url }}" alt="Mujer adulta mostrando el probiótico íntimo femenino en casa">
         </figure>
         <div class="lifestyle-copy reveal">
           <p class="eyebrow">Autocuidado sin incomodidad</p>
@@ -1045,13 +1034,13 @@
         </div>
         <div class="gallery-grid">
           <figure class="gallery-item reveal">
-            <img src="selfie2.png" alt="Mujer adulta sosteniendo Urocare.cl en una rutina de baño">
+            <img src="{{ 'selfie2.png' | asset_url }}" alt="Mujer adulta sosteniendo Urocare.cl en una rutina de baño">
           </figure>
           <figure class="gallery-item reveal">
-            <img src="flatlay.png" alt="Flatlay editorial con Urocare.cl, flores y cápsulas rosadas">
+            <img src="{{ 'flatlay.png' | asset_url }}" alt="Flatlay editorial con Urocare.cl, flores y cápsulas rosadas">
           </figure>
           <figure class="gallery-item reveal">
-            <img src="lifestyle.png" alt="Mujer adulta sosteniendo el probiótico íntimo femenino en ambiente cálido">
+            <img src="{{ 'lifestyle.png' | asset_url }}" alt="Mujer adulta sosteniendo el probiótico íntimo femenino en ambiente cálido">
           </figure>
         </div>
         <div class="cta-strip reveal">
@@ -1175,8 +1164,8 @@
     </div>
   </footer>
 
-  <script>
-    const revealObserver = new IntersectionObserver((entries) => {
+<script>
+const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
@@ -1219,6 +1208,18 @@
 
     renderTimer();
     setInterval(renderTimer, 1000);
-  </script>
-</body>
-</html>
+</script>
+
+{% schema %}
+{
+  "name": "Urocare landing",
+  "tag": "section",
+  "class": "urocare-landing-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Urocare landing"
+    }
+  ]
+}
+{% endschema %}
