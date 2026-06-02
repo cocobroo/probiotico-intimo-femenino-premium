@@ -205,6 +205,10 @@
       width: 100%;
     }
 
+    .buy-form.is-hidden {
+      display: none;
+    }
+
     .btn-light {
       background: var(--white);
       color: var(--berry);
@@ -1183,6 +1187,13 @@
     }
 </style>
 
+{% assign myurocare_product = all_products['probiotico-intimo-femenino-myurocare-com'] %}
+{% assign pack_1_variant = myurocare_product.variants | where: 'sku', 'MYUROCARE-PACK-1X' | first %}
+{% assign pack_2_variant = myurocare_product.variants | where: 'sku', 'MYUROCARE-PACK-2X' | first %}
+{% assign pack_3_variant = myurocare_product.variants | where: 'sku', 'MYUROCARE-PACK-3X' | first %}
+{% assign fallback_variant = myurocare_product.selected_or_first_available_variant %}
+{% assign product_url = myurocare_product.url | default: '/products/probiotico-intimo-femenino-myurocare-com' %}
+
 <div class="topbar">CYBERDAY activo · Descuentos por tiempo limitado · Envío gratis sobre $29.990</div>
 
   <nav class="nav" aria-label="Navegación principal">
@@ -1191,7 +1202,7 @@
       <span class="brand-copy">MYUROCARE.COM<small>Bienestar íntimo</small></span>
     </a>
     <form class="buy-form" method="post" action="/cart/add">
-      <input type="hidden" name="id" value="42837537488967">
+      <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
       <input type="hidden" name="quantity" value="1">
       <input type="hidden" name="return_to" value="/checkout">
       <button class="btn" type="submit">Comprar oferta Cyber</button>
@@ -1240,19 +1251,19 @@
           </div>
           <div class="hero-actions">
             <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="42837537488967">
+              <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="return_to" value="/checkout">
               <button class="btn" type="submit">Comprar pack popular</button>
             </form>
             <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="42837537456199">
+              <input type="hidden" name="id" value="{{ pack_2_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="return_to" value="/checkout">
               <button class="btn btn-light" type="submit">Comprar pack 2x</button>
             </form>
             <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="42837537423431">
+              <input type="hidden" name="id" value="{{ pack_1_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="return_to" value="/checkout">
               <button class="btn btn-light" type="submit">Comprar pack 1x</button>
@@ -1289,7 +1300,7 @@
       <span class="stars">★★★★★</span> Cyberday activo · +2.400 clientas · 14 packs 3x disponibles
       <div>
         <form class="buy-form" method="post" action="/cart/add">
-          <input type="hidden" name="id" value="42837537488967">
+          <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
           <input type="hidden" name="quantity" value="1">
           <input type="hidden" name="return_to" value="/checkout">
           <button class="btn btn-light" type="submit">Aprovechar descuento ahora</button>
@@ -1326,7 +1337,7 @@
             <strong>$15.990</strong>
           </div>
           <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="return_to" value="/checkout">
             <button class="btn" type="submit">Comprar oferta Cyberday</button>
@@ -1345,7 +1356,7 @@
           <h2 id="lifestyle-title">Sentirte tranquila también es parte de la rutina</h2>
           <p>MYUROCARE.COM está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con envío discreto y una presentación que se siente moderna, limpia y cercana.</p>
           <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="return_to" value="/checkout">
             <button class="btn" type="submit">Lo quiero en mi rutina</button>
@@ -1393,7 +1404,7 @@
         <div class="cta-strip reveal">
           <p>Cyberday dura poco: elige tu pack antes de que suba el precio o se agote el stock popular.</p>
           <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="return_to" value="/checkout">
             <button class="btn" type="submit">Comprar descuento Cyberday</button>
@@ -1419,7 +1430,7 @@
             <div class="unit-price">Precio por unidad $15.990</div>
             <div class="stock-note">Quedan 24 packs 1x</div>
             <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="42837537423431">
+              <input type="hidden" name="id" value="{{ pack_1_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="return_to" value="/checkout">
               <button class="btn" type="submit">Comprar pack 1x</button>
@@ -1437,7 +1448,7 @@
             <div class="pack-note">La opción más elegida por nuestras clientas</div>
             <div class="stock-note">Solo quedan 14 packs 3x</div>
             <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="42837537488967">
+              <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="return_to" value="/checkout">
               <button class="btn" type="submit">Quiero el pack popular</button>
@@ -1454,7 +1465,7 @@
             <div class="unit-price">Precio por unidad $13.495</div>
             <div class="stock-note">Quedan 18 packs 2x</div>
             <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="42837537456199">
+              <input type="hidden" name="id" value="{{ pack_2_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="return_to" value="/checkout">
               <button class="btn" type="submit">Comprar pack 2x</button>
@@ -1511,7 +1522,7 @@
         <div class="cta-strip reveal">
           <p>Si ya estás lista para comprar, el pack 3x tiene el mejor precio por unidad.</p>
           <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="return_to" value="/checkout">
             <button class="btn" type="submit">Comprar pack más popular</button>
@@ -1549,7 +1560,7 @@
         <div class="cta-strip reveal">
           <p>Compra hoy y recibe tu pedido con empaque discreto y seguimiento.</p>
           <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="return_to" value="/checkout">
             <button class="btn" type="submit">Comprar pack popular</button>
@@ -1614,7 +1625,7 @@
           <span class="timer" data-countdown-label>Oferta termina en 03:00:00</span>
         </div>
         <form class="buy-form" method="post" action="/cart/add">
-          <input type="hidden" name="id" value="42837537488967">
+          <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
           <input type="hidden" name="quantity" value="1">
           <input type="hidden" name="return_to" value="/checkout">
           <button class="btn btn-light" type="submit">Comprar antes que termine</button>
@@ -1629,7 +1640,7 @@
       <small>Desde $15.990 · quedan 14 packs 3x</small>
     </div>
     <form class="buy-form" method="post" action="/cart/add">
-      <input type="hidden" name="id" value="42837537488967">
+      <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
       <input type="hidden" name="quantity" value="1">
       <input type="hidden" name="return_to" value="/checkout">
       <button class="btn" type="submit">Comprar</button>
@@ -1696,6 +1707,18 @@ const revealObserver = new IntersectionObserver((entries) => {
 
     document.querySelectorAll(".reveal").forEach((element) => {
       revealObserver.observe(element);
+    });
+
+    document.querySelectorAll(".buy-form").forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        const variantInput = form.querySelector('input[name="id"]');
+        const variantId = variantInput ? variantInput.value.trim() : "";
+
+        if (!variantId) {
+          event.preventDefault();
+          window.location.href = "{{ product_url }}";
+        }
+      });
     });
 
     document.querySelectorAll(".faq-question").forEach((button) => {
