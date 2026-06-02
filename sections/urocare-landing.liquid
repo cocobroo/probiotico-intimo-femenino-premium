@@ -195,6 +195,16 @@
       box-shadow: 0 24px 52px rgba(53, 18, 31, 0.25);
     }
 
+    .buy-form {
+      display: inline-flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .buy-form .btn {
+      width: 100%;
+    }
+
     .btn-light {
       background: var(--white);
       color: var(--berry);
@@ -1152,6 +1162,10 @@
       .hero-actions .btn {
         width: 100%;
       }
+
+      .hero-actions .buy-form {
+        width: 100%;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1176,7 +1190,12 @@
       <img class="brand-avatar" src="{{ 'instagram-profile.png' | asset_url }}" alt="Logo MYUROCARE.COM">
       <span class="brand-copy">MYUROCARE.COM<small>Bienestar íntimo</small></span>
     </a>
-    <a class="btn" href="/cart/42837537488967:1">Comprar oferta Cyber</a>
+    <form class="buy-form" method="post" action="/cart/add">
+      <input type="hidden" name="id" value="42837537488967">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="return_to" value="/checkout">
+      <button class="btn" type="submit">Comprar oferta Cyber</button>
+    </form>
   </nav>
 
   <div class="cyber-strip">
@@ -1220,9 +1239,24 @@
             <strong>$15.990</strong>
           </div>
           <div class="hero-actions">
-            <a class="btn" href="/cart/42837537488967:1">Comprar pack popular</a>
-            <a class="btn btn-light" href="/cart/42837537456199:1">Comprar pack 2x</a>
-            <a class="btn btn-light" href="/cart/42837537423431:1">Comprar pack 1x</a>
+            <form class="buy-form" method="post" action="/cart/add">
+              <input type="hidden" name="id" value="42837537488967">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="return_to" value="/checkout">
+              <button class="btn" type="submit">Comprar pack popular</button>
+            </form>
+            <form class="buy-form" method="post" action="/cart/add">
+              <input type="hidden" name="id" value="42837537456199">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="return_to" value="/checkout">
+              <button class="btn btn-light" type="submit">Comprar pack 2x</button>
+            </form>
+            <form class="buy-form" method="post" action="/cart/add">
+              <input type="hidden" name="id" value="42837537423431">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="return_to" value="/checkout">
+              <button class="btn btn-light" type="submit">Comprar pack 1x</button>
+            </form>
           </div>
           <p class="fomo-line">Más de 37 personas revisaron esta oferta hoy. El pack 3x es el más elegido y tiene stock limitado.</p>
           <div class="badges" aria-label="Beneficios de compra">
@@ -1254,7 +1288,12 @@
     <section class="social-proof" aria-label="Prueba social">
       <span class="stars">★★★★★</span> Cyberday activo · +2.400 clientas · 14 packs 3x disponibles
       <div>
-        <a class="btn btn-light" href="/cart/42837537488967:1">Aprovechar descuento ahora</a>
+        <form class="buy-form" method="post" action="/cart/add">
+          <input type="hidden" name="id" value="42837537488967">
+          <input type="hidden" name="quantity" value="1">
+          <input type="hidden" name="return_to" value="/checkout">
+          <button class="btn btn-light" type="submit">Aprovechar descuento ahora</button>
+        </form>
       </div>
     </section>
 
@@ -1286,7 +1325,12 @@
             <del>$21.990</del>
             <strong>$15.990</strong>
           </div>
-          <a class="btn" href="/cart/42837537488967:1">Comprar oferta Cyberday</a>
+          <form class="buy-form" method="post" action="/cart/add">
+            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="/checkout">
+            <button class="btn" type="submit">Comprar oferta Cyberday</button>
+          </form>
         </article>
       </div>
     </section>
@@ -1300,7 +1344,12 @@
           <p class="eyebrow">Autocuidado sin incomodidad</p>
           <h2 id="lifestyle-title">Sentirte tranquila también es parte de la rutina</h2>
           <p>MYUROCARE.COM está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con envío discreto y una presentación que se siente moderna, limpia y cercana.</p>
-          <a class="btn" href="/cart/42837537488967:1">Lo quiero en mi rutina</a>
+          <form class="buy-form" method="post" action="/cart/add">
+            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="/checkout">
+            <button class="btn" type="submit">Lo quiero en mi rutina</button>
+          </form>
         </div>
       </div>
     </section>
@@ -1343,7 +1392,12 @@
         </div>
         <div class="cta-strip reveal">
           <p>Cyberday dura poco: elige tu pack antes de que suba el precio o se agote el stock popular.</p>
-          <a class="btn" href="/cart/42837537488967:1">Comprar descuento Cyberday</a>
+          <form class="buy-form" method="post" action="/cart/add">
+            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="/checkout">
+            <button class="btn" type="submit">Comprar descuento Cyberday</button>
+          </form>
         </div>
       </div>
     </section>
@@ -1364,7 +1418,12 @@
             <div class="saving">Ahorra $6.000</div>
             <div class="unit-price">Precio por unidad $15.990</div>
             <div class="stock-note">Quedan 24 packs 1x</div>
-            <a class="btn" href="/cart/42837537423431:1">Agregar al carrito Cyber</a>
+            <form class="buy-form" method="post" action="/cart/add">
+              <input type="hidden" name="id" value="42837537423431">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="return_to" value="/checkout">
+              <button class="btn" type="submit">Comprar pack 1x</button>
+            </form>
             <div class="secure-line">Compra 100% segura</div>
           </article>
 
@@ -1377,7 +1436,12 @@
             <div class="unit-price">Precio por unidad $11.997</div>
             <div class="pack-note">La opción más elegida por nuestras clientas</div>
             <div class="stock-note">Solo quedan 14 packs 3x</div>
-            <a class="btn" href="/cart/42837537488967:1">Quiero el pack popular</a>
+            <form class="buy-form" method="post" action="/cart/add">
+              <input type="hidden" name="id" value="42837537488967">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="return_to" value="/checkout">
+              <button class="btn" type="submit">Quiero el pack popular</button>
+            </form>
             <div class="secure-line">Compra 100% segura</div>
           </article>
 
@@ -1389,7 +1453,12 @@
             <div class="saving">Ahorra $4.990</div>
             <div class="unit-price">Precio por unidad $13.495</div>
             <div class="stock-note">Quedan 18 packs 2x</div>
-            <a class="btn" href="/cart/42837537456199:1">Agregar al carrito Cyber</a>
+            <form class="buy-form" method="post" action="/cart/add">
+              <input type="hidden" name="id" value="42837537456199">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="return_to" value="/checkout">
+              <button class="btn" type="submit">Comprar pack 2x</button>
+            </form>
             <div class="secure-line">Compra 100% segura</div>
           </article>
         </div>
@@ -1441,7 +1510,12 @@
         </div>
         <div class="cta-strip reveal">
           <p>Si ya estás lista para comprar, el pack 3x tiene el mejor precio por unidad.</p>
-          <a class="btn" href="/cart/42837537488967:1">Comprar pack más popular</a>
+          <form class="buy-form" method="post" action="/cart/add">
+            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="/checkout">
+            <button class="btn" type="submit">Comprar pack más popular</button>
+          </form>
         </div>
       </div>
     </section>
@@ -1474,7 +1548,12 @@
         </div>
         <div class="cta-strip reveal">
           <p>Compra hoy y recibe tu pedido con empaque discreto y seguimiento.</p>
-          <a class="btn" href="/cart/42837537488967:1">Comprar pack popular</a>
+          <form class="buy-form" method="post" action="/cart/add">
+            <input type="hidden" name="id" value="42837537488967">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="/checkout">
+            <button class="btn" type="submit">Comprar pack popular</button>
+          </form>
         </div>
       </div>
     </section>
@@ -1534,7 +1613,12 @@
           <span class="stock">Solo quedan 14 packs 3x disponibles</span>
           <span class="timer" data-countdown-label>Oferta termina en 03:00:00</span>
         </div>
-        <a class="btn btn-light" href="/cart/42837537488967:1">Comprar antes que termine</a>
+        <form class="buy-form" method="post" action="/cart/add">
+          <input type="hidden" name="id" value="42837537488967">
+          <input type="hidden" name="quantity" value="1">
+          <input type="hidden" name="return_to" value="/checkout">
+          <button class="btn btn-light" type="submit">Comprar antes que termine</button>
+        </form>
       </div>
     </section>
   </main>
@@ -1544,7 +1628,12 @@
       <strong>Cyberday MYUROCARE</strong>
       <small>Desde $15.990 · quedan 14 packs 3x</small>
     </div>
-    <a class="btn" href="/cart/42837537488967:1">Comprar</a>
+    <form class="buy-form" method="post" action="/cart/add">
+      <input type="hidden" name="id" value="42837537488967">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="return_to" value="/checkout">
+      <button class="btn" type="submit">Comprar</button>
+    </form>
   </div>
 
   <footer class="footer">
