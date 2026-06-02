@@ -95,6 +95,43 @@
       text-transform: none;
     }
 
+    .fomo-shelf {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      padding: 0.85rem 1rem;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fomo-chip {
+      display: grid;
+      justify-items: center;
+      gap: 0.12rem;
+      min-height: 3.4rem;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid rgba(168, 20, 66, 0.16);
+      border-radius: 18px;
+      background: linear-gradient(180deg, var(--shell), var(--white));
+      color: var(--wine);
+      box-shadow: 0 12px 30px rgba(168, 20, 66, 0.08);
+      text-align: center;
+    }
+
+    .fomo-chip strong {
+      color: var(--berry);
+      font-size: 0.88rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .fomo-chip span {
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
     .logo {
       display: inline-flex;
       align-items: center;
@@ -1018,6 +1055,12 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
+      .fomo-shelf {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-left: clamp(1rem, 4vw, 4.5rem);
+        padding-right: clamp(1rem, 4vw, 4.5rem);
+      }
+
       .pricing-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -1133,12 +1176,27 @@
       <img class="brand-avatar" src="{{ 'instagram-profile.png' | asset_url }}" alt="Logo MYUROCARE.COM">
       <span class="brand-copy">MYUROCARE.COM<small>Bienestar íntimo</small></span>
     </a>
-    <a class="btn" href="#comprar">Comprar oferta Cyber</a>
+    <a class="btn" href="/cart/42837537488967:1">Comprar oferta Cyber</a>
   </nav>
 
   <div class="cyber-strip">
     Últimas unidades Cyberday con descuento
     <small>PACK 3x más popular: quedan 14 disponibles en esta promo</small>
+  </div>
+
+  <div class="fomo-shelf" aria-label="Urgencia Cyberday">
+    <div class="fomo-chip">
+      <strong>14 packs 3x disponibles</strong>
+      <span>El pack más elegido tiene stock bajo</span>
+    </div>
+    <div class="fomo-chip">
+      <strong>37 personas mirando</strong>
+      <span>Oferta activa solo por Cyberday</span>
+    </div>
+    <div class="fomo-chip">
+      <strong data-countdown-label>Oferta termina en 03:00:00</strong>
+      <span>Precios vuelven a normal al terminar</span>
+    </div>
   </div>
 
   <main id="inicio">
@@ -1147,7 +1205,7 @@
         <div class="hero-copy reveal">
           <p class="eyebrow">Cyberday bienestar íntimo</p>
           <h1 id="hero-title">CYBERDAY MYUROCARE</h1>
-          <p class="lead">Packs con descuento por tiempo limitado para acompañar tu rutina diaria de bienestar íntimo con compra discreta, despacho reservado y pago seguro.</p>
+          <p class="lead">Packs con descuento por tiempo limitado para acompañar tu rutina diaria de bienestar íntimo con compra discreta, envío reservado en algunos días y pago seguro.</p>
           <div class="cyber-countdown" aria-label="Contador Cyberday">
             <strong>La oferta termina pronto</strong>
             <div class="countdown-grid">
@@ -1162,9 +1220,9 @@
             <strong>$15.990</strong>
           </div>
           <div class="hero-actions">
-            <a class="btn" href="#comprar">Comprar con descuento</a>
-            <a class="btn btn-light" href="#comprar">Ver packs Cyber</a>
-            <a class="btn btn-light" href="#producto">Ver producto</a>
+            <a class="btn" href="/cart/42837537488967:1">Comprar pack popular</a>
+            <a class="btn btn-light" href="/cart/42837537456199:1">Comprar pack 2x</a>
+            <a class="btn btn-light" href="/cart/42837537423431:1">Comprar pack 1x</a>
           </div>
           <p class="fomo-line">Más de 37 personas revisaron esta oferta hoy. El pack 3x es el más elegido y tiene stock limitado.</p>
           <div class="badges" aria-label="Beneficios de compra">
@@ -1196,7 +1254,7 @@
     <section class="social-proof" aria-label="Prueba social">
       <span class="stars">★★★★★</span> Cyberday activo · +2.400 clientas · 14 packs 3x disponibles
       <div>
-        <a class="btn btn-light" href="#comprar">Aprovechar descuento ahora</a>
+        <a class="btn btn-light" href="/cart/42837537488967:1">Aprovechar descuento ahora</a>
       </div>
     </section>
 
@@ -1208,7 +1266,7 @@
           </figure>
           <p class="eyebrow">Producto Cyberday</p>
           <h2 id="producto-title">Probiótico Íntimo Femenino MYUROCARE.COM</h2>
-          <p class="product-description">Suplemento alimentario en cápsulas pensado para acompañar la rutina diaria de bienestar íntimo femenino adulto. Durante Cyberday, los packs tienen precio rebajado y stock limitado para despacho reservado.</p>
+          <p class="product-description">Suplemento alimentario en cápsulas pensado para acompañar la rutina diaria de bienestar íntimo femenino adulto. Durante Cyberday, los packs tienen precio rebajado, stock limitado y envío discreto en algunos días.</p>
           <div class="product-details" aria-label="Detalles del producto">
             <div class="detail-pill">
               <strong>60 cápsulas</strong>
@@ -1220,7 +1278,7 @@
             </div>
             <div class="detail-pill">
               <strong>Compra discreta</strong>
-              Pedido protegido y despacho reservado.
+              Pedido protegido y entrega en algunos días.
             </div>
           </div>
           <div class="price-row product-price">
@@ -1228,7 +1286,7 @@
             <del>$21.990</del>
             <strong>$15.990</strong>
           </div>
-          <a class="btn" href="#comprar">Comprar oferta Cyberday</a>
+          <a class="btn" href="/cart/42837537488967:1">Comprar oferta Cyberday</a>
         </article>
       </div>
     </section>
@@ -1241,8 +1299,8 @@
         <div class="lifestyle-copy reveal">
           <p class="eyebrow">Autocuidado sin incomodidad</p>
           <h2 id="lifestyle-title">Sentirte tranquila también es parte de la rutina</h2>
-          <p>MYUROCARE.COM está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con despacho discreto y una presentación que se siente moderna, limpia y cercana.</p>
-          <a class="btn" href="#comprar">Lo quiero en mi rutina</a>
+          <p>MYUROCARE.COM está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con envío discreto y una presentación que se siente moderna, limpia y cercana.</p>
+          <a class="btn" href="/cart/42837537488967:1">Lo quiero en mi rutina</a>
         </div>
       </div>
     </section>
@@ -1265,8 +1323,8 @@
             <div class="benefit-icon">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg>
             </div>
-            <h3>Despacho reservado</h3>
-            <p>Preparamos tu pedido con empaque sobrio y envío a distintas comunas de Chile.</p>
+            <h3>Envío reservado</h3>
+            <p>Preparamos tu pedido con empaque sobrio y entrega en algunos días hábiles.</p>
           </article>
           <article class="benefit reveal">
             <div class="benefit-icon">
@@ -1285,7 +1343,7 @@
         </div>
         <div class="cta-strip reveal">
           <p>Cyberday dura poco: elige tu pack antes de que suba el precio o se agote el stock popular.</p>
-          <a class="btn" href="#comprar">Ver descuentos Cyberday</a>
+          <a class="btn" href="/cart/42837537488967:1">Comprar descuento Cyberday</a>
         </div>
       </div>
     </section>
@@ -1295,7 +1353,7 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Cyberday por pack</p>
           <h2 id="precios-title">Descuentos activos solo por Cyberday</h2>
-          <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro, despacho discreto y garantía de 30 días.</p>
+          <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro, envío discreto y garantía de 30 días.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card reveal">
@@ -1342,7 +1400,7 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <h2 id="funciona-title">Cómo funciona</h2>
-          <p>Pedido online, despacho discreto y una rutina sencilla desde que llega a tu casa.</p>
+          <p>Pedido online, envío discreto y una rutina sencilla desde que llega a tu casa.</p>
         </div>
         <div class="steps">
           <article class="step reveal">
@@ -1353,7 +1411,7 @@
           <article class="step reveal">
             <span class="step-number">2</span>
             <h3>Recibe tu pedido</h3>
-            <p>Enviamos tu producto con empaque discreto y seguimiento hasta la entrega.</p>
+            <p>Enviamos tu producto con empaque discreto y seguimiento. La entrega puede demorar algunos días hábiles.</p>
           </article>
           <article class="step reveal">
             <span class="step-number">3</span>
@@ -1383,7 +1441,7 @@
         </div>
         <div class="cta-strip reveal">
           <p>Si ya estás lista para comprar, el pack 3x tiene el mejor precio por unidad.</p>
-          <a class="btn" href="#comprar">Ver pack más popular</a>
+          <a class="btn" href="/cart/42837537488967:1">Comprar pack más popular</a>
         </div>
       </div>
     </section>
@@ -1392,13 +1450,13 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <h2 id="testimonios-title">Lo que dicen quienes ya compraron</h2>
-          <p>Comentarios reales en tono de experiencia: compra simple, despacho discreto y presentación cuidada.</p>
+          <p>Comentarios reales en tono de experiencia: compra simple, envío discreto y presentación cuidada.</p>
         </div>
         <div class="testimonials">
           <article class="testimonial reveal">
             <div class="avatar" aria-hidden="true">CM</div>
             <div class="stars" aria-label="5 estrellas">★★★★★</div>
-            <p>"Me gustó que la compra fuera discreta. Llegó rápido a Ñuñoa y el envase se ve tal cual en las fotos."</p>
+            <p>"Me gustó que la compra fuera discreta. Llegó dentro del plazo a Ñuñoa y el envase se ve tal cual en las fotos."</p>
             <div class="person">Camila Morales<span class="city">Ñuñoa</span></div>
           </article>
           <article class="testimonial reveal">
@@ -1416,7 +1474,7 @@
         </div>
         <div class="cta-strip reveal">
           <p>Compra hoy y recibe tu pedido con empaque discreto y seguimiento.</p>
-          <a class="btn" href="#comprar">Agregar al carrito</a>
+          <a class="btn" href="/cart/42837537488967:1">Comprar pack popular</a>
         </div>
       </div>
     </section>
@@ -1471,12 +1529,12 @@
     <section class="section final-cta" id="cta-final" aria-labelledby="cta-title">
       <div class="wrap reveal">
         <h2 id="cta-title">Cyberday termina pronto</h2>
-        <p>Compra hoy MYUROCARE.COM con precio rebajado, despacho reservado, pago seguro y garantía de 30 días. Cuando se acabe el stock Cyber, los precios vuelven a normal.</p>
+        <p>Compra hoy MYUROCARE.COM con precio rebajado, envío reservado en algunos días, pago seguro y garantía de 30 días. Cuando se acabe el stock Cyber, los precios vuelven a normal.</p>
         <div>
           <span class="stock">Solo quedan 14 packs 3x disponibles</span>
           <span class="timer" data-countdown-label>Oferta termina en 03:00:00</span>
         </div>
-        <a class="btn btn-light" href="#comprar">Comprar antes que termine</a>
+        <a class="btn btn-light" href="/cart/42837537488967:1">Comprar antes que termine</a>
       </div>
     </section>
   </main>
@@ -1486,7 +1544,7 @@
       <strong>Cyberday MYUROCARE</strong>
       <small>Desde $15.990 · quedan 14 packs 3x</small>
     </div>
-    <a class="btn" href="#comprar">Comprar</a>
+    <a class="btn" href="/cart/42837537488967:1">Comprar</a>
   </div>
 
   <footer class="footer">
@@ -1526,7 +1584,7 @@
     "{{ 'hero.png' | asset_url }}",
     "{{ 'original-product.jpg' | asset_url }}"
   ],
-  "description": "Suplemento alimentario en cápsulas para acompañar la rutina diaria de bienestar íntimo femenino adulto. Formato de 60 cápsulas veganas, compra discreta y despacho reservado.",
+  "description": "Suplemento alimentario en cápsulas para acompañar la rutina diaria de bienestar íntimo femenino adulto. Formato de 60 cápsulas veganas, compra discreta y envío reservado en algunos días.",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "CLP",
