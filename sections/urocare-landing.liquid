@@ -209,6 +209,12 @@
       display: none;
     }
 
+    .buy-form .btn:disabled {
+      cursor: wait;
+      opacity: 0.78;
+      transform: none;
+    }
+
     .btn-light {
       background: var(--white);
       color: var(--berry);
@@ -1802,14 +1808,71 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.observe(element);
     });
 
+    let checkoutRequestInProgress = false;
+
     document.querySelectorAll(".buy-form").forEach((form) => {
-      form.addEventListener("submit", (event) => {
+      form.addEventListener("submit", async (event) => {
         const variantInput = form.querySelector('input[name="id"]');
         const variantId = variantInput ? variantInput.value.trim() : "";
 
+        event.preventDefault();
+
+        if (checkoutRequestInProgress) {
+          return;
+        }
+
         if (!variantId) {
-          event.preventDefault();
           window.location.href = "{{ product_url }}";
+          return;
+        }
+
+        if (!window.fetch) {
+          window.location.href = `/cart/${variantId}:1`;
+          return;
+        }
+
+        checkoutRequestInProgress = true;
+
+        const button = form.querySelector("button");
+        const originalText = button ? button.textContent : "";
+
+        if (button) {
+          button.disabled = true;
+          button.textContent = "Preparando checkout...";
+        }
+
+        try {
+          await fetch("/cart/clear.js", {
+            method: "POST",
+            headers: {
+              "Accept": "application/json"
+            }
+          });
+
+          const addResponse = await fetch("/cart/add.js", {
+            method: "POST",
+            headers: {
+              "Accept": "application/json",
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              id: Number(variantId),
+              quantity: 1
+            })
+          });
+
+          if (!addResponse.ok) {
+            throw new Error("No se pudo agregar el pack al carrito");
+          }
+
+          window.location.href = "/checkout";
+        } catch (error) {
+          checkoutRequestInProgress = false;
+          if (button) {
+            button.disabled = false;
+            button.textContent = originalText;
+          }
+          window.location.href = `/cart/${variantId}:1`;
         }
       });
     });
