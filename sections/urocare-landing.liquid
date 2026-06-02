@@ -278,7 +278,7 @@
     }
 
     h1 {
-      max-width: 11ch;
+      max-width: 14ch;
       margin-bottom: 1rem;
       margin-left: auto;
       margin-right: auto;
@@ -599,6 +599,34 @@
     .product-price {
       width: min(360px, 100%);
       margin-top: 0.35rem;
+    }
+
+    .ingredient-list {
+      display: grid;
+      gap: 0.75rem;
+      width: min(760px, 100%);
+      margin: 1.4rem auto 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ingredient-list li {
+      padding: 0.95rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--wine);
+      font-weight: 700;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .support-note {
+      max-width: 680px;
+      margin: 1rem auto 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.6;
     }
 
     .benefits {
@@ -1194,7 +1222,7 @@
 {% assign fallback_variant = myurocare_product.selected_or_first_available_variant %}
 {% assign product_url = myurocare_product.url | default: '/products/probiotico-intimo-femenino-myurocare-com' %}
 
-<div class="topbar">CYBERDAY activo · Descuentos por tiempo limitado · Compra 100% segura</div>
+<div class="topbar">CYBERDAY activo · Descuentos reales · Compra 100% segura</div>
 
   <nav class="nav" aria-label="Navegación principal">
     <a class="logo" href="#inicio" aria-label="MYUROCARE.COM">
@@ -1210,22 +1238,22 @@
   </nav>
 
   <div class="cyber-strip">
-    Últimas unidades Cyberday con descuento
-    <small>PACK 3x más popular: quedan 14 disponibles en esta promo</small>
+    Cyberday Myurocare con descuento
+    <small>PACK 1x $15.990 · PACK 2x $26.990 · PACK 3x $35.990</small>
   </div>
 
-  <div class="fomo-shelf" aria-label="Urgencia Cyberday">
+  <div class="fomo-shelf" aria-label="Oferta Cyberday">
     <div class="fomo-chip">
-      <strong>14 packs 3x disponibles</strong>
-      <span>El pack más elegido tiene stock bajo</span>
+      <strong>Cyberday activo</strong>
+      <span>Precio rebajado en todos los packs</span>
     </div>
     <div class="fomo-chip">
-      <strong>37 personas mirando</strong>
-      <span>Oferta activa solo por Cyberday</span>
+      <strong>Desde $15.990</strong>
+      <span>Pack individual con descuento</span>
     </div>
     <div class="fomo-chip">
-      <strong data-countdown-label>Oferta termina en 03:00:00</strong>
-      <span>Precios vuelven a normal al terminar</span>
+      <strong>PACK 3x $35.990</strong>
+      <span>Mejor precio por unidad</span>
     </div>
   </div>
 
@@ -1234,16 +1262,8 @@
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Cyberday bienestar íntimo</p>
-          <h1 id="hero-title">CYBERDAY MYUROCARE</h1>
-          <p class="lead">Packs con descuento por tiempo limitado para acompañar tu rutina diaria de bienestar íntimo con compra discreta, pago seguro y garantía de 30 días.</p>
-          <div class="cyber-countdown" aria-label="Contador Cyberday">
-            <strong>La oferta termina pronto</strong>
-            <div class="countdown-grid">
-              <div class="time-box"><span data-countdown-hours>03</span><small>horas</small></div>
-              <div class="time-box"><span data-countdown-minutes>00</span><small>min</small></div>
-              <div class="time-box"><span data-countdown-seconds>00</span><small>seg</small></div>
-            </div>
-          </div>
+          <h1 id="hero-title">Equilibra tu flora íntima desde adentro</h1>
+          <p class="lead">Probiótico vaginal femenino con mezcla de Lactobacillus y prebióticos. Apoya el equilibrio del pH, la flora vaginal y el olor íntimo natural. 60 cápsulas · toma diaria.</p>
           <div class="price-row">
             <span>Cyber desde</span>
             <del>$21.990</del>
@@ -1254,7 +1274,7 @@
               <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="return_to" value="/checkout">
-              <button class="btn" type="submit">Comprar pack popular</button>
+              <button class="btn" type="submit">Quiero equilibrar mi flora</button>
             </form>
             <form class="buy-form" method="post" action="/cart/add">
               <input type="hidden" name="id" value="{{ pack_2_variant.id | default: fallback_variant.id }}">
@@ -1269,7 +1289,7 @@
               <button class="btn btn-light" type="submit">Comprar pack 1x</button>
             </form>
           </div>
-          <p class="fomo-line">Más de 37 personas revisaron esta oferta hoy. El pack 3x es el más elegido y tiene stock limitado.</p>
+          <p class="fomo-line">Envío discreto · Garantía 30 días · +2.400 clientas</p>
           <div class="badges" aria-label="Beneficios de compra">
             <div class="badge">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
@@ -1296,8 +1316,24 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="sirve-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">¿Para qué sirve?</p>
+          <h2 id="sirve-title">Tu flora íntima necesita bacterias buenas</h2>
+          <p>Cuando el pH vaginal se desequilibra, las bacterias dañinas ganan terreno y aparecen molestias, olor e incomodidad. Los Lactobacillus de Myurocare ayudan a repoblar tu flora con bacterias buenas y a mantener un pH saludable, día a día.</p>
+        </div>
+        <form class="buy-form reveal" method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+          <input type="hidden" name="return_to" value="/checkout">
+          <button class="btn" type="submit">Quiero apoyar mi pH</button>
+        </form>
+      </div>
+    </section>
+
     <section class="social-proof" aria-label="Prueba social">
-      <span class="stars">★★★★★</span> Cyberday activo · +2.400 clientas · 14 packs 3x disponibles
+      <span class="stars">★★★★★</span> Cyberday activo · +2.400 clientas · Probiótico vaginal femenino
       <div>
         <form class="buy-form" method="post" action="/cart/add">
           <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
@@ -1316,7 +1352,7 @@
           </figure>
           <p class="eyebrow">Producto Cyberday</p>
           <h2 id="producto-title">Probiótico Íntimo Femenino MYUROCARE.COM</h2>
-          <p class="product-description">Suplemento alimentario en cápsulas pensado para acompañar la rutina diaria de bienestar íntimo femenino adulto. Durante Cyberday, los packs tienen precio rebajado, stock limitado y compra privada.</p>
+          <p class="product-description">Suplemento alimentario en cápsulas con mezcla de Lactobacillus y prebióticos. Ayuda a apoyar el equilibrio del pH, la flora vaginal y el olor íntimo natural como parte de una toma diaria constante.</p>
           <div class="product-details" aria-label="Detalles del producto">
             <div class="detail-pill">
               <strong>60 cápsulas</strong>
@@ -1327,8 +1363,8 @@
               Cápsulas de suplemento alimentario.
             </div>
             <div class="detail-pill">
-              <strong>Compra discreta</strong>
-              Compra protegida y privada.
+              <strong>Lactobacillus + prebiótico</strong>
+              Fórmula pensada para apoyar bacterias buenas.
             </div>
           </div>
           <div class="price-row product-price">
@@ -1347,19 +1383,19 @@
     </section>
 
     <section class="section" aria-labelledby="lifestyle-title">
-      <div class="wrap lifestyle-grid">
-        <figure class="lifestyle-image reveal">
-          <img src="{{ 'selfie1.png' | asset_url }}" alt="Mujer adulta mostrando el probiótico íntimo femenino en casa">
-        </figure>
-        <div class="lifestyle-copy reveal">
-          <p class="eyebrow">Autocuidado sin incomodidad</p>
-          <h2 id="lifestyle-title">Sentirte tranquila también es parte de la rutina</h2>
-          <p>MYUROCARE.COM está pensado para mujeres que quieren comprar su cuidado íntimo sin vueltas, con una experiencia privada y una presentación que se siente moderna, limpia y cercana.</p>
+        <div class="wrap lifestyle-grid">
+          <figure class="lifestyle-image reveal">
+            <img src="{{ 'selfie1.png' | asset_url }}" alt="Mujer adulta mostrando el probiótico íntimo femenino en casa">
+          </figure>
+          <div class="lifestyle-copy reveal">
+          <p class="eyebrow">Rutina diaria</p>
+          <h2 id="lifestyle-title">Apoya tu bienestar íntimo todos los días</h2>
+          <p>Myurocare está pensado para mujeres que quieren cuidar su flora íntima desde adentro, con una toma simple y una fórmula enfocada en bacterias buenas, pH saludable y frescura natural.</p>
           <form class="buy-form" method="post" action="/cart/add">
             <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="return_to" value="/checkout">
-            <button class="btn" type="submit">Lo quiero en mi rutina</button>
+            <button class="btn" type="submit">Sumarlo a mi rutina</button>
           </form>
         </div>
       </div>
@@ -1368,41 +1404,41 @@
     <section class="section" aria-labelledby="beneficios-title">
       <div class="wrap">
         <div class="section-heading reveal">
-          <h2 id="beneficios-title">Beneficios que se sienten simples</h2>
-          <p>Una compra diseñada para que el autocuidado íntimo sea claro, privado y fácil de incorporar al día a día.</p>
+          <h2 id="beneficios-title">Beneficios para tu equilibrio íntimo</h2>
+          <p>Una fórmula diaria que ayuda a apoyar la flora vaginal y el bienestar íntimo desde adentro.</p>
         </div>
         <div class="benefits">
           <article class="benefit reveal">
             <div class="benefit-icon">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l2 5v10a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8z"/><path d="M8 8h8"/><path d="M10 13h4"/></svg>
             </div>
-            <h3>Formato práctico</h3>
-            <p>Cápsulas fáciles de sumar a tu rutina diaria, con envase compacto y discreto.</p>
+            <h3>Equilibrio del pH</h3>
+            <p>Apoya un pH vaginal saludable para sentirte cómoda cada día.</p>
           </article>
           <article class="benefit reveal">
             <div class="benefit-icon">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg>
             </div>
-            <h3>Compra privada</h3>
-            <p>Una experiencia simple, sobria y pensada para comprar sin incomodidad.</p>
+            <h3>Flora protegida</h3>
+            <p>Lactobacillus que ayudan a repoblar las bacterias buenas.</p>
           </article>
           <article class="benefit reveal">
             <div class="benefit-icon">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2.7A4 4 0 0 1 19 10c0 6.6-7 11-7 11z"/></svg>
             </div>
-            <h3>Enfoque femenino</h3>
-            <p>Una experiencia pensada para bienestar íntimo adulto, sin tabúes ni exageraciones.</p>
+            <h3>Frescura natural</h3>
+            <p>Contribuye a mantener un olor íntimo equilibrado.</p>
           </article>
           <article class="benefit reveal">
             <div class="benefit-icon">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/><path d="M4 4h16v16H4z"/></svg>
             </div>
-            <h3>Compra protegida</h3>
-            <p>Pago seguro, garantía de 30 días y atención rápida si necesitas ayuda.</p>
+            <h3>Toma simple</h3>
+            <p>2 cápsulas al día, fácil de sumar a tu rutina.</p>
           </article>
         </div>
         <div class="cta-strip reveal">
-          <p>Cyberday dura poco: elige tu pack antes de que suba el precio o se agote el stock popular.</p>
+          <p>Elige tu pack Cyberday y empieza una rutina diaria enfocada en pH, flora vaginal y frescura natural.</p>
           <form class="buy-form" method="post" action="/cart/add">
             <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
@@ -1413,12 +1449,55 @@
       </div>
     </section>
 
+    <section class="section product-showcase" aria-labelledby="formula-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Qué contiene</p>
+          <h2 id="formula-title">Fórmula con respaldo</h2>
+          <p>Ingredientes pensados para apoyar bacterias buenas y complementar tu bienestar íntimo diario.</p>
+        </div>
+        <ul class="ingredient-list reveal">
+          <li>Mezcla de Lactobacillus (Acidophilus, Rhamnosus, Reuteri, Fermentum)</li>
+          <li>Prebiótico que alimenta las bacterias buenas</li>
+          <li>Apto vegano · 60 cápsulas · 30 días de toma</li>
+        </ul>
+        <p class="support-note reveal">Indicaciones: 2 cápsulas diarias. Suplemento alimentario, no reemplaza una evaluación médica.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="actua-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Cómo actúa</p>
+          <h2 id="actua-title">pH → flora → bienestar</h2>
+          <p>Una toma diaria que acompaña el equilibrio íntimo desde adentro, con lenguaje de suplemento y sin reemplazar orientación profesional.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-number">pH</span>
+            <h3>Apoya el pH</h3>
+            <p>Ayuda a mantener un entorno vaginal saludable como parte de una rutina constante.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">Flora</span>
+            <h3>Repuebla la flora</h3>
+            <p>Lactobacillus que ayudan a repoblar bacterias buenas y apoyar el equilibrio natural.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">Bien</span>
+            <h3>Bienestar íntimo diario</h3>
+            <p>Contribuye a sentir mayor comodidad y frescura natural con uso constante.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section pricing" id="comprar" aria-labelledby="precios-title">
       <div class="wrap">
         <div class="section-heading reveal">
           <p class="eyebrow">Cyberday por pack</p>
           <h2 id="precios-title">Descuentos activos solo por Cyberday</h2>
-          <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro, compra privada y garantía de 30 días.</p>
+          <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro y garantía de 30 días.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card reveal">
@@ -1428,7 +1507,6 @@
             <div class="price-real">$15.990</div>
             <div class="saving">Ahorra $6.000</div>
             <div class="unit-price">Precio por unidad $15.990</div>
-            <div class="stock-note">Quedan 24 packs 1x</div>
             <form class="buy-form" method="post" action="/cart/add">
               <input type="hidden" name="id" value="{{ pack_1_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
@@ -1446,7 +1524,6 @@
             <div class="saving">Ahorra $11.980</div>
             <div class="unit-price">Precio por unidad $11.997</div>
             <div class="pack-note">La opción más elegida por nuestras clientas</div>
-            <div class="stock-note">Solo quedan 14 packs 3x</div>
             <form class="buy-form" method="post" action="/cart/add">
               <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
@@ -1463,7 +1540,6 @@
             <div class="price-real">$26.990</div>
             <div class="saving">Ahorra $4.990</div>
             <div class="unit-price">Precio por unidad $13.495</div>
-            <div class="stock-note">Quedan 18 packs 2x</div>
             <form class="buy-form" method="post" action="/cart/add">
               <input type="hidden" name="id" value="{{ pack_2_variant.id | default: fallback_variant.id }}">
               <input type="hidden" name="quantity" value="1">
@@ -1479,24 +1555,24 @@
     <section class="section" aria-labelledby="funciona-title">
       <div class="wrap">
         <div class="section-heading reveal">
-          <h2 id="funciona-title">Cómo funciona</h2>
-          <p>Compra online, pago seguro y una rutina sencilla para tu autocuidado.</p>
+          <h2 id="funciona-title">Cómo tomarlo</h2>
+          <p>Una rutina simple para acompañar tu equilibrio íntimo con constancia.</p>
         </div>
         <div class="steps">
           <article class="step reveal">
             <span class="step-number">1</span>
-            <h3>Elige y paga online</h3>
-            <p>Compra en pocos pasos, con medios de pago seguros y confirmación inmediata.</p>
+            <h3>Toma diaria</h3>
+            <p>Incorpora 2 cápsulas al día según las indicaciones del envase.</p>
           </article>
           <article class="step reveal">
             <span class="step-number">2</span>
-            <h3>Confirmamos tu compra</h3>
-            <p>Recibes la confirmación de tu pedido y el detalle de tu compra de forma clara.</p>
+            <h3>Uso constante</h3>
+            <p>Los suplementos se integran mejor cuando forman parte de una rutina sostenida.</p>
           </article>
           <article class="step reveal">
             <span class="step-number">3</span>
-            <h3>Súmalo a tu día</h3>
-            <p>Lee las indicaciones del envase e incorpóralo como complemento de bienestar.</p>
+            <h3>Complementa tu cuidado</h3>
+            <p>No reemplaza una evaluación médica; acompaña hábitos saludables y orientación profesional cuando corresponda.</p>
           </article>
         </div>
       </div>
@@ -1535,30 +1611,30 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <h2 id="testimonios-title">Lo que dicen quienes ya compraron</h2>
-          <p>Comentarios reales en tono de experiencia: compra simple, proceso privado y presentación cuidada.</p>
+          <p>Experiencias de mujeres que lo sumaron a su rutina diaria de bienestar íntimo.</p>
         </div>
         <div class="testimonials">
           <article class="testimonial reveal">
             <div class="avatar" aria-hidden="true">CM</div>
             <div class="stars" aria-label="5 estrellas">★★★★★</div>
-            <p>"Me gustó que la compra fuera discreta. La página era clara y el envase se ve tal cual en las fotos."</p>
-            <div class="person">Camila Morales<span class="city">Ñuñoa</span></div>
+            <p>"Tenía molestias seguido y desde que lo tomo me siento mucho más equilibrada. Lo sumé a mi rutina y no lo dejo."</p>
+            <div class="person">Camila M.<span class="city">Ñuñoa</span></div>
           </article>
           <article class="testimonial reveal">
             <div class="avatar" aria-hidden="true">VR</div>
             <div class="stars" aria-label="5 estrellas">★★★★★</div>
-            <p>"Lo compré para ordenar mi rutina de autocuidado. La página era clara y pude pagar con Webpay sin problemas."</p>
-            <div class="person">Valentina Rojas<span class="city">Concepción</span></div>
+            <p>"Lo empecé para cuidar mi flora y noté la diferencia en un par de semanas. Además la compra fue súper discreta."</p>
+            <div class="person">Valentina R.<span class="city">Concepción</span></div>
           </article>
           <article class="testimonial reveal">
             <div class="avatar" aria-hidden="true">FS</div>
             <div class="stars" aria-label="5 estrellas">★★★★★</div>
-            <p>"La atención fue clara y la presentación se ve muy cuidada. Se siente como un producto premium, no algo incómodo de comprar."</p>
-            <div class="person">Francisca Silva<span class="city">La Serena</span></div>
+            <p>"Por fin un probiótico pensado para nosotras. Fácil de tomar y me da tranquilidad usarlo todos los días."</p>
+            <div class="person">Francisca S.<span class="city">La Serena</span></div>
           </article>
         </div>
         <div class="cta-strip reveal">
-          <p>Compra hoy con precio Cyberday y asegura el pack más elegido antes de que vuelva a precio normal.</p>
+          <p>Compra hoy con precio Cyberday y suma Myurocare a tu rutina diaria de bienestar íntimo.</p>
           <form class="buy-form" method="post" action="/cart/add">
             <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
             <input type="hidden" name="quantity" value="1">
@@ -1573,7 +1649,7 @@
       <div class="wrap story reveal">
         <p class="eyebrow">Nuestra historia</p>
         <h2 id="historia-title">Cuidado íntimo con más naturalidad</h2>
-        <p>MYUROCARE.COM nace desde una idea simple: que comprar productos de bienestar íntimo no tenga que sentirse frío, confuso ni incómodo. Queremos acercar una experiencia más estética, privada y honesta, para que cada mujer pueda elegir su autocuidado con calma y confianza.</p>
+        <p>Myurocare nace desde una idea simple: que el bienestar íntimo femenino pueda hablarse con más naturalidad, información clara y una rutina fácil de sostener. Queremos acercar una fórmula pensada para apoyar tu flora, tu pH y tu confianza diaria, sin exageraciones ni promesas médicas.</p>
       </div>
     </section>
 
@@ -1596,7 +1672,28 @@
               ¿Cómo se usa?
               <span class="faq-mark" aria-hidden="true">+</span>
             </button>
-            <div class="faq-panel">Sigue las indicaciones del envase y no excedas la dosis sugerida. Está pensado como complemento de una rutina de bienestar diaria.</div>
+            <div class="faq-panel">Indicaciones: 2 cápsulas diarias. No excedas la dosis sugerida y úsalo como complemento de una rutina de bienestar diaria.</div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              ¿Para qué sirve?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">Apoya el equilibrio del pH, la flora vaginal y el olor íntimo natural.</div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              ¿Cuándo se notan resultados?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">Al ser una toma diaria, suele notarse con uso constante de algunas semanas.</div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              ¿Puedo tomarlo con anticonceptivos?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel">Es un suplemento alimentario; ante dudas, consulta a tu profesional de salud.</div>
           </article>
           <article class="faq-item reveal">
             <button class="faq-question" type="button" aria-expanded="false">
@@ -1618,17 +1715,13 @@
 
     <section class="section final-cta" id="cta-final" aria-labelledby="cta-title">
       <div class="wrap reveal">
-        <h2 id="cta-title">Cyberday termina pronto</h2>
-        <p>Compra hoy MYUROCARE.COM con precio rebajado, pago seguro y garantía de 30 días. Cuando se acabe el stock Cyber, los precios vuelven a normal.</p>
-        <div>
-          <span class="stock">Solo quedan 14 packs 3x disponibles</span>
-          <span class="timer" data-countdown-label>Oferta termina en 03:00:00</span>
-        </div>
+        <h2 id="cta-title">Equilibra tu flora íntima desde adentro</h2>
+        <p>Compra Myurocare con descuento Cyberday, pago seguro y garantía de 30 días. Elige el pack que mejor se adapte a tu rutina diaria.</p>
         <form class="buy-form" method="post" action="/cart/add">
           <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
           <input type="hidden" name="quantity" value="1">
           <input type="hidden" name="return_to" value="/checkout">
-          <button class="btn btn-light" type="submit">Comprar antes que termine</button>
+          <button class="btn btn-light" type="submit">Comprar con descuento Cyberday</button>
         </form>
       </div>
     </section>
@@ -1637,7 +1730,7 @@
   <div class="mobile-cyber-cta" aria-label="Oferta Cyberday fija">
     <div>
       <strong>Cyberday MYUROCARE</strong>
-      <small>Desde $15.990 · quedan 14 packs 3x</small>
+      <small>Desde $15.990 · Pack 3x $35.990</small>
     </div>
     <form class="buy-form" method="post" action="/cart/add">
       <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
@@ -1684,7 +1777,7 @@
     "{{ 'hero.png' | asset_url }}",
     "{{ 'original-product.jpg' | asset_url }}"
   ],
-  "description": "Suplemento alimentario en cápsulas para acompañar la rutina diaria de bienestar íntimo femenino adulto. Formato de 60 cápsulas veganas, compra privada y pago seguro.",
+  "description": "Probiótico vaginal femenino con mezcla de Lactobacillus y prebióticos. Apoya el equilibrio del pH, la flora vaginal y el olor íntimo natural. Formato de 60 cápsulas veganas para toma diaria.",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "CLP",
@@ -1738,25 +1831,6 @@ const revealObserver = new IntersectionObserver((entries) => {
       });
     });
 
-    const countdownHours = document.querySelectorAll("[data-countdown-hours]");
-    const countdownMinutes = document.querySelectorAll("[data-countdown-minutes]");
-    const countdownSeconds = document.querySelectorAll("[data-countdown-seconds]");
-    const countdownLabels = document.querySelectorAll("[data-countdown-label]");
-    let secondsLeft = 3 * 60 * 60;
-
-    function renderTimer() {
-      const hours = String(Math.floor(secondsLeft / 3600)).padStart(2, "0");
-      const minutes = String(Math.floor((secondsLeft % 3600) / 60)).padStart(2, "0");
-      const seconds = String(secondsLeft % 60).padStart(2, "0");
-      countdownHours.forEach((element) => { element.textContent = hours; });
-      countdownMinutes.forEach((element) => { element.textContent = minutes; });
-      countdownSeconds.forEach((element) => { element.textContent = seconds; });
-      countdownLabels.forEach((element) => { element.textContent = `Oferta termina en ${hours}:${minutes}:${seconds}`; });
-      secondsLeft = Math.max(0, secondsLeft - 1);
-    }
-
-    renderTimer();
-    setInterval(renderTimer, 1000);
 </script>
 
 {% schema %}
