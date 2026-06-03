@@ -675,6 +675,7 @@
     }
 
     .pricing {
+      scroll-margin-top: 5.5rem;
       background:
         linear-gradient(180deg, rgba(255, 240, 244, 0.82), rgba(255, 250, 247, 0.95)),
         var(--shell);
@@ -704,6 +705,50 @@
     .price-card.featured {
       border: 2px solid var(--berry);
       box-shadow: 0 24px 64px rgba(168, 20, 66, 0.18);
+    }
+
+    .pack-option-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    .price-card {
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .price-card:hover,
+    .price-card.is-selected {
+      transform: translateY(-3px);
+      border-color: var(--berry);
+      box-shadow: 0 24px 64px rgba(168, 20, 66, 0.16);
+    }
+
+    .price-card.is-selected::after {
+      content: "Seleccionado";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 1.85rem;
+      padding: 0.32rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(22, 128, 58, 0.12);
+      color: #126b31;
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .offer-checkout {
+      margin-top: 1.25rem;
+      display: grid;
+      justify-items: center;
+      gap: 0.55rem;
     }
 
     .popular-badge {
@@ -1235,12 +1280,7 @@
       <img class="brand-avatar" src="{{ 'instagram-profile.png' | asset_url }}" alt="Logo MYUROCARE.COM">
       <span class="brand-copy">MYUROCARE.COM<small>Bienestar íntimo</small></span>
     </a>
-    <form class="buy-form" method="post" action="/cart/add">
-      <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-      <input type="hidden" name="quantity" value="1">
-      <input type="hidden" name="return_to" value="/checkout">
-      <button class="btn" type="submit">Comprar oferta Cyber</button>
-    </form>
+    <a class="btn offer-scroll" href="#oferta">Obtener oferta</a>
   </nav>
 
   <div class="cyber-strip">
@@ -1276,24 +1316,8 @@
             <strong>$15.990</strong>
           </div>
           <div class="hero-actions">
-            <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_to" value="/checkout">
-              <button class="btn" type="submit">Quiero equilibrar mi flora</button>
-            </form>
-            <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="{{ pack_2_variant.id | default: fallback_variant.id }}">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_to" value="/checkout">
-              <button class="btn btn-light" type="submit">Comprar pack 2x</button>
-            </form>
-            <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="{{ pack_1_variant.id | default: fallback_variant.id }}">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_to" value="/checkout">
-              <button class="btn btn-light" type="submit">Comprar pack 1x</button>
-            </form>
+            <a class="btn offer-scroll" href="#oferta">Quiero equilibrar mi flora</a>
+            <a class="btn btn-light offer-scroll" href="#oferta">Ver packs Cyberday</a>
           </div>
           <p class="fomo-line">Envío discreto · Garantía 30 días · +2.400 clientas</p>
           <div class="badges" aria-label="Beneficios de compra">
@@ -1329,24 +1353,14 @@
           <h2 id="sirve-title">Tu flora íntima necesita bacterias buenas</h2>
           <p>Cuando el pH vaginal se desequilibra, las bacterias dañinas ganan terreno y aparecen molestias, olor e incomodidad. Los Lactobacillus de Myurocare ayudan a repoblar tu flora con bacterias buenas y a mantener un pH saludable, día a día.</p>
         </div>
-        <form class="buy-form reveal" method="post" action="/cart/add">
-          <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-          <input type="hidden" name="quantity" value="1">
-          <input type="hidden" name="return_to" value="/checkout">
-          <button class="btn" type="submit">Quiero apoyar mi pH</button>
-        </form>
+        <a class="btn offer-scroll reveal" href="#oferta">Quiero apoyar mi pH</a>
       </div>
     </section>
 
     <section class="social-proof" aria-label="Prueba social">
       <span class="stars">★★★★★</span> Cyberday activo · +2.400 clientas · Probiótico vaginal femenino
       <div>
-        <form class="buy-form" method="post" action="/cart/add">
-          <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-          <input type="hidden" name="quantity" value="1">
-          <input type="hidden" name="return_to" value="/checkout">
-          <button class="btn btn-light" type="submit">Aprovechar descuento ahora</button>
-        </form>
+        <a class="btn btn-light offer-scroll" href="#oferta">Aprovechar descuento ahora</a>
       </div>
     </section>
 
@@ -1378,12 +1392,7 @@
             <del>$21.990</del>
             <strong>$15.990</strong>
           </div>
-          <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-            <input type="hidden" name="quantity" value="1">
-            <input type="hidden" name="return_to" value="/checkout">
-            <button class="btn" type="submit">Comprar oferta Cyberday</button>
-          </form>
+          <a class="btn offer-scroll" href="#oferta">Comprar oferta Cyberday</a>
         </article>
       </div>
     </section>
@@ -1397,12 +1406,7 @@
           <p class="eyebrow">Rutina diaria</p>
           <h2 id="lifestyle-title">Apoya tu bienestar íntimo todos los días</h2>
           <p>Myurocare está pensado para mujeres que quieren cuidar su flora íntima desde adentro, con una toma simple y una fórmula enfocada en bacterias buenas, pH saludable y frescura natural.</p>
-          <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-            <input type="hidden" name="quantity" value="1">
-            <input type="hidden" name="return_to" value="/checkout">
-            <button class="btn" type="submit">Sumarlo a mi rutina</button>
-          </form>
+          <a class="btn offer-scroll" href="#oferta">Sumarlo a mi rutina</a>
         </div>
       </div>
     </section>
@@ -1445,12 +1449,7 @@
         </div>
         <div class="cta-strip reveal">
           <p>Elige tu pack Cyberday y empieza una rutina diaria enfocada en pH, flora vaginal y frescura natural.</p>
-          <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-            <input type="hidden" name="quantity" value="1">
-            <input type="hidden" name="return_to" value="/checkout">
-            <button class="btn" type="submit">Comprar descuento Cyberday</button>
-          </form>
+          <a class="btn offer-scroll" href="#oferta">Comprar descuento Cyberday</a>
         </div>
       </div>
     </section>
@@ -1498,62 +1497,54 @@
       </div>
     </section>
 
-    <section class="section pricing" id="comprar" aria-labelledby="precios-title">
+    <section class="section pricing" id="oferta" aria-labelledby="precios-title">
       <div class="wrap">
         <div class="section-heading reveal">
           <p class="eyebrow">Cyberday por pack</p>
-          <h2 id="precios-title">Descuentos activos solo por Cyberday</h2>
-          <p>Compra más unidades y baja el precio por cada frasco. Todos los packs incluyen pago seguro y garantía de 30 días.</p>
+          <h2 id="precios-title">Elige tu oferta Myurocare</h2>
+          <p>Selecciona la cantidad que quieres llevar. El pack del medio viene preseleccionado y puedes cambiarlo antes de ir a pagar.</p>
         </div>
         <div class="pricing-grid">
-          <article class="price-card reveal">
+          <label class="price-card reveal" data-variant-id="{{ pack_1_variant.id | default: fallback_variant.id }}">
+            <input class="pack-option-input" type="radio" name="pack_variant" value="{{ pack_1_variant.id | default: fallback_variant.id }}">
             <div class="sale-tag">Cyber -27%</div>
             <div class="pack-title">PACK 1x</div>
             <div class="price-old">$21.990</div>
             <div class="price-real">$15.990</div>
             <div class="saving">Ahorra $6.000</div>
             <div class="unit-price">Precio por unidad $15.990</div>
-            <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="{{ pack_1_variant.id | default: fallback_variant.id }}">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_to" value="/checkout">
-              <button class="btn" type="submit">Comprar pack 1x</button>
-            </form>
-            <div class="secure-line">Compra 100% segura</div>
-          </article>
+          </label>
 
-          <article class="price-card featured reveal">
-            <div class="popular-badge cyber-badge">MÁS POPULAR · CYBER</div>
-            <div class="pack-title">PACK 3x</div>
-            <div class="price-old">$47.970</div>
-            <div class="price-real">$35.990</div>
-            <div class="saving">Ahorra $11.980</div>
-            <div class="unit-price">Precio por unidad $11.997</div>
-            <div class="pack-note">La opción más elegida por nuestras clientas</div>
-            <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_to" value="/checkout">
-              <button class="btn" type="submit">Quiero el pack popular</button>
-            </form>
-            <div class="secure-line">Compra 100% segura</div>
-          </article>
-
-          <article class="price-card reveal">
+          <label class="price-card featured is-selected reveal" data-variant-id="{{ pack_2_variant.id | default: fallback_variant.id }}">
+            <input class="pack-option-input" type="radio" name="pack_variant" value="{{ pack_2_variant.id | default: fallback_variant.id }}" checked>
+            <div class="popular-badge cyber-badge">PRESELECCIONADO · CYBER</div>
             <div class="sale-tag">Cyber -16%</div>
             <div class="pack-title">PACK 2x</div>
             <div class="price-old">$31.980</div>
             <div class="price-real">$26.990</div>
             <div class="saving">Ahorra $4.990</div>
             <div class="unit-price">Precio por unidad $13.495</div>
-            <form class="buy-form" method="post" action="/cart/add">
-              <input type="hidden" name="id" value="{{ pack_2_variant.id | default: fallback_variant.id }}">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_to" value="/checkout">
-              <button class="btn" type="submit">Comprar pack 2x</button>
-            </form>
-            <div class="secure-line">Compra 100% segura</div>
-          </article>
+          </label>
+
+          <label class="price-card reveal" data-variant-id="{{ pack_3_variant.id | default: fallback_variant.id }}">
+            <input class="pack-option-input" type="radio" name="pack_variant" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
+            <div class="popular-badge cyber-badge">MÁS POPULAR</div>
+            <div class="pack-title">PACK 3x</div>
+            <div class="price-old">$47.970</div>
+            <div class="price-real">$35.990</div>
+            <div class="saving">Ahorra $11.980</div>
+            <div class="unit-price">Precio por unidad $11.997</div>
+            <div class="pack-note">La opción más elegida por nuestras clientas</div>
+          </label>
+        </div>
+        <div class="offer-checkout reveal">
+          <form class="buy-form" method="post" action="/cart/add">
+            <input id="selected-pack-variant" type="hidden" name="id" value="{{ pack_2_variant.id | default: fallback_variant.id }}">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="/checkout">
+            <button class="btn" type="submit">IR A PAGAR</button>
+          </form>
+          <div class="secure-line">Compra 100% segura</div>
         </div>
       </div>
     </section>
@@ -1603,12 +1594,7 @@
         </div>
         <div class="cta-strip reveal">
           <p>Si ya estás lista para comprar, el pack 3x tiene el mejor precio por unidad.</p>
-          <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-            <input type="hidden" name="quantity" value="1">
-            <input type="hidden" name="return_to" value="/checkout">
-            <button class="btn" type="submit">Comprar pack más popular</button>
-          </form>
+          <a class="btn offer-scroll" href="#oferta">Comprar pack más popular</a>
         </div>
       </div>
     </section>
@@ -1641,12 +1627,7 @@
         </div>
         <div class="cta-strip reveal">
           <p>Compra hoy con precio Cyberday y suma Myurocare a tu rutina diaria de bienestar íntimo.</p>
-          <form class="buy-form" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-            <input type="hidden" name="quantity" value="1">
-            <input type="hidden" name="return_to" value="/checkout">
-            <button class="btn" type="submit">Comprar pack popular</button>
-          </form>
+          <a class="btn offer-scroll" href="#oferta">Comprar pack popular</a>
         </div>
       </div>
     </section>
@@ -1723,12 +1704,7 @@
       <div class="wrap reveal">
         <h2 id="cta-title">Equilibra tu flora íntima desde adentro</h2>
         <p>Compra Myurocare con descuento Cyberday, pago seguro y garantía de 30 días. Elige el pack que mejor se adapte a tu rutina diaria.</p>
-        <form class="buy-form" method="post" action="/cart/add">
-          <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-          <input type="hidden" name="quantity" value="1">
-          <input type="hidden" name="return_to" value="/checkout">
-          <button class="btn btn-light" type="submit">Comprar con descuento Cyberday</button>
-        </form>
+        <a class="btn btn-light offer-scroll" href="#oferta">Comprar con descuento Cyberday</a>
       </div>
     </section>
   </main>
@@ -1738,12 +1714,7 @@
       <strong>Cyberday MYUROCARE</strong>
       <small>Desde $15.990 · Pack 3x $35.990</small>
     </div>
-    <form class="buy-form" method="post" action="/cart/add">
-      <input type="hidden" name="id" value="{{ pack_3_variant.id | default: fallback_variant.id }}">
-      <input type="hidden" name="quantity" value="1">
-      <input type="hidden" name="return_to" value="/checkout">
-      <button class="btn" type="submit">Comprar</button>
-    </form>
+    <a class="btn offer-scroll" href="#oferta">Ver oferta</a>
   </div>
 
   <footer class="footer">
@@ -1806,6 +1777,35 @@ const revealObserver = new IntersectionObserver((entries) => {
 
     document.querySelectorAll(".reveal").forEach((element) => {
       revealObserver.observe(element);
+    });
+
+    const offerSection = document.querySelector("#oferta");
+
+    document.querySelectorAll(".offer-scroll").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (!offerSection) {
+          return;
+        }
+
+        event.preventDefault();
+        offerSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    const selectedPackInput = document.querySelector("#selected-pack-variant");
+
+    document.querySelectorAll(".pack-option-input").forEach((input) => {
+      input.addEventListener("change", () => {
+        if (!selectedPackInput) {
+          return;
+        }
+
+        selectedPackInput.value = input.value;
+
+        document.querySelectorAll(".price-card").forEach((card) => {
+          card.classList.toggle("is-selected", card.contains(input));
+        });
+      });
     });
 
     let checkoutRequestInProgress = false;
